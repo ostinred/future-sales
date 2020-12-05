@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/future-sales/static/css/main.190ce8e4.chunk.css",
-    "main.js": "/future-sales/static/js/main.f3ae7dd9.chunk.js",
-    "main.js.map": "/future-sales/static/js/main.f3ae7dd9.chunk.js.map",
+    "main.js": "/future-sales/static/js/main.3231c930.chunk.js",
+    "main.js.map": "/future-sales/static/js/main.3231c930.chunk.js.map",
     "runtime-main.js": "/future-sales/static/js/runtime-main.cf7afa31.js",
     "runtime-main.js.map": "/future-sales/static/js/runtime-main.cf7afa31.js.map",
     "static/js/2.aafa1b1d.chunk.js": "/future-sales/static/js/2.aafa1b1d.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.cf7afa31.js",
     "static/js/2.aafa1b1d.chunk.js",
     "static/css/main.190ce8e4.chunk.css",
-    "static/js/main.f3ae7dd9.chunk.js"
+    "static/js/main.3231c930.chunk.js"
   ]
 }

@@ -6,7 +6,7 @@ import './styles/index.scss';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/future-sales">
       <Router />
     </BrowserRouter>
   );

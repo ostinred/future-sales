@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/future-sales/static/css/main.1b21c811.chunk.css",
+    "main.js": "/future-sales/static/js/main.ee53ac3f.chunk.js",
+    "main.js.map": "/future-sales/static/js/main.ee53ac3f.chunk.js.map",
+    "runtime-main.js": "/future-sales/static/js/runtime-main.cf7afa31.js",
+    "runtime-main.js.map": "/future-sales/static/js/runtime-main.cf7afa31.js.map",
+    "static/js/2.34bf83cc.chunk.js": "/future-sales/static/js/2.34bf83cc.chunk.js",
+    "static/js/2.34bf83cc.chunk.js.map": "/future-sales/static/js/2.34bf83cc.chunk.js.map",
+    "static/js/3.a5dc44c5.chunk.js": "/future-sales/static/js/3.a5dc44c5.chunk.js",
+    "static/js/3.a5dc44c5.chunk.js.map": "/future-sales/static/js/3.a5dc44c5.chunk.js.map",
+    "index.html": "/future-sales/index.html",
+    "static/css/main.1b21c811.chunk.css.map": "/future-sales/static/css/main.1b21c811.chunk.css.map",
+    "static/js/2.34bf83cc.chunk.js.LICENSE.txt": "/future-sales/static/js/2.34bf83cc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cf7afa31.js",
+    "static/js/2.34bf83cc.chunk.js",
+    "static/css/main.1b21c811.chunk.css",
+    "static/js/main.ee53ac3f.chunk.js"
+  ]
+}

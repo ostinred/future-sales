@@ -1,10 +1,8 @@
-import { Router, Route, Switch, useHistory } from 'react-router-dom';
+import { Router, Route, Switch, Redirect, useHistory } from 'react-router-dom';
 
 import Home from '../pages/Home';
 import Service from '../pages/Service';
-
-const HOME = '/';
-const SERVICE = '/service';
+import { HOME_PAGE, SERVICE_PAGE } from './routes';
 
 const Routes = () => {
   const history = useHistory();
@@ -15,8 +13,9 @@ const Routes = () => {
         render={() => {
           return (
             <Switch>
-              <Route exact path={HOME} component={Home} />
-              <Route exact path={SERVICE} component={Service} />
+              <Route exact path={HOME_PAGE} component={Home} />
+              <Route exact path={SERVICE_PAGE} component={Service} />
+              <Redirect to={HOME_PAGE} />
             </Switch>
           );
         }}

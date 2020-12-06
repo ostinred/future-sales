@@ -59,8 +59,8 @@ const CreateSale = () => {
       status: 'active',
       images: imgs
     };
-    //setProduct(productInstance);
-    //history.push("/future-sales/deals");
+    setProduct(productInstance);
+    history.push("/future-sales/deals");
   };
 
   const onFileAttached = (event) => {

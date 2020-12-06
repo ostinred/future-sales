@@ -1,15 +1,35 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+@import 'normalize';
+@import 'fonts';
+@import 'variables';
+@import 'nav';
+@import 'createSellingPage';
 
-@import "normalize";
-@import "variables";
-@import "nav";
-@import "createSellingPage";
+@media screen and (min-width: 500px) {
+  html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  body {
+    flex: 1;
+    min-height: 812px;
+    max-height: 900px;
+    border: 1px solid #ccc;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
 
 body {
-  font-family: "Open Sans", sans-serif;
-  padding: 15px 0;
   background-color: #faf7f7;
+  max-width: 414px;
+  margin: 0 auto;
 }
+
 .inputError {
   color: red;
 }

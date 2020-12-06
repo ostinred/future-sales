@@ -1,0 +1,33 @@
+.product-list {
+}
+
+.product-list__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 15px 10px;
+
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $primary;
+    font-weight: 700;
+
+    i {
+      padding-left: 4px;
+      font-size: 12px;
+      transition: 0.2s;
+    }
+
+    &:hover {
+      i {
+        transform: translateX(5px);
+      }
+    }
+  }
+}
+
+.product-list__title {
+  margin: 0;
+  font-size: 24px;
+}

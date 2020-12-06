@@ -4,7 +4,11 @@ import { motion } from 'framer-motion';
 import Layout from '../components/Layout';
 import NavBar from '../components/NavBar';
 
+import Categories from '../components/Categories';
+import ProductList from '../components/ProductList';
+
 import { PAGE_TRANSITION, PAGE_VARIANT_BASIC } from '../constants';
+import { HOME_PAGE } from '../router/routes';
 
 const Home = () => {
   return (
@@ -15,6 +19,10 @@ const Home = () => {
       transition={PAGE_TRANSITION}
       variants={PAGE_VARIANT_BASIC}>
       <Layout classNamePage="with-navbar">
+        <Categories />
+
+        <ProductList title="The most popular" link={HOME_PAGE} />
+        <ProductList title="Top sales" link={HOME_PAGE} />
         <NavBar />
       </Layout>
     </motion.div>

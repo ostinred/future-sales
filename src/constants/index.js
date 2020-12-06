@@ -34,3 +34,13 @@ export const PAGE_TRANSITION = {
   ease: 'easeInOut',
   duration: 0.3,
 };
+
+export const CATEGORIES = [
+  { name: 'Watches', icon: 'icon-watch' },
+  { name: 'Phones', icon: 'icon-phone' },
+  { name: 'Laptops', icon: 'icon-laptop' },
+  { name: 'Sound', icon: 'icon-speaker' },
+  { name: 'Sports', icon: 'icon-baseball' },
+  { name: 'Clothes', icon: 'icon-clothes' },
+  { name: 'Shoes', icon: 'icon-shoes' },
+];

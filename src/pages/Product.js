@@ -30,7 +30,6 @@ const Product = () => {
   const commitNowUrl = `/checkout/${product.id}`;
   const seller = getUserInfo();
   const categorySubscribers = 2467;
-  console.log('product.description.length', product.description.length)
   const toggleExpandDetails = () => {
     setState({...state, ...{
       expandedDetails: !state.expandedDetails,

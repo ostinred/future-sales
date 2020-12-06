@@ -15,7 +15,14 @@ const Header = ({product}) => {
   }));
   const [state, setState] = useState({
     currentImageIndex: 0,
-  })
+  });
+  const setCurrentSlide = (index) => {
+    setState({...state, ...{
+      currentImageIndex: index,
+    }});
+  };
+
+
 
   return (
     <section className='productHeader'>
@@ -27,7 +34,11 @@ const Header = ({product}) => {
         <img src={addToWishListImage} alt="Add to wish list"/>
       </button>
 
-      <Carousel className='imageCarousel' withoutControls={true}>
+      <Carousel
+        className='imageCarousel'
+        withoutControls={true}
+        afterSlide={(slideIndex) => setCurrentSlide(slideIndex)}
+      >
         {_.map(productImages, (o) => (
           <img key={o.id} src={o.img} alt={product.title}/>
         ))}

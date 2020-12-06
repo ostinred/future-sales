@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ProductContext } from '../contexts/ProductsProvider';
-import { HOME_PAGE } from '../router/routes';
 import ProductItem from './ProductItem';
 
 const ProductList = ({ title, link }) => {

@@ -14,19 +14,23 @@ import {getSellingDate} from "../utils/getSellingDate";
 import {formatNumber} from "../utils/formatNumber";
 import {calculateCommitmentPrice} from "../utils/calculateCommitmentPrice";
 import { Link } from "react-router-dom";
+import {HOME_PAGE} from "../router/routes";
+import ProductList from "../components/ProductList";
 
 const Product = () => {
-  const [state, setState] = useState({
-    expandedDetails: false,
-    expandedSeller: false,
-  });
   const {productId} = useParams();
   const {getProduct} = useContext(ProductContext);
   const {getUserInfo} = useContext(UserContext);
   const product = getProduct(productId);
+  const [state, setState] = useState({
+    showExpandDetailsButton: product.description.length > 70,
+    expandedDetails: false,
+    expandedSeller: false,
+  });
   const commitNowUrl = `/checkout/${product.id}`;
   const seller = getUserInfo();
   const categorySubscribers = 2467;
+  console.log('product.description.length', product.description.length)
   const toggleExpandDetails = () => {
     setState({...state, ...{
       expandedDetails: !state.expandedDetails,
@@ -37,6 +41,7 @@ const Product = () => {
       expandedSeller: !state.expandedSeller,
     }});
   };
+  console.log('state', state);
 
   return (
     <motion.div
@@ -68,14 +73,24 @@ const Product = () => {
               <h6>Description</h6>
               <p>{product.description}</p>
             </section>
-            <span className='expandButton' onClick={() => toggleExpandDetails()}>{state.expandedDetails ? 'Hide' : 'Read All'}</span>
+            {state.showExpandDetailsButton ?  (
+              <span className='expandButton' onClick={() => toggleExpandDetails()}>{state.expandedDetails ? 'Hide' : 'Read All'}</span>
+            ) : null}
 
             <section className="subscribe">
-              <h6>{product.category} Subscribers</h6>
-              {formatNumber(categorySubscribers)}
+              <div className="counter">
+                <h6>{product.category} Subscribers</h6>
+                <span>{formatNumber(categorySubscribers)}</span>
+              </div>
+
+              <div className="action">
+                <span className="subscribeButton">Subscribe</span>
+              </div>
             </section>
 
             <section className={state.expandedSeller ? 'seller expanded' : 'seller'}>
+              <h6>Seller information</h6>
+
               <figure>
                 <div className="imageWrapper">
                   <img src={seller.avatar} alt="Seller"/>
@@ -86,10 +101,16 @@ const Product = () => {
                     <img src={locationImage} alt="Seller location"/>
                     {seller.location}
                   </p>
+                  <ul className="sellerDetails">
+                    <li><span className="label">Profession</span> <span className="value">{seller.profession}</span></li>
+                    <li><span className="label">Hobbies</span> <span className="value">{seller.hobbies.join(', ')}</span></li>
+                  </ul>
+                  <span className='expandButton' onClick={() => toggleSellerDetails()}>{state.expandedSeller ? 'Hide' : 'View Details'}</span>
                 </figcaption>
               </figure>
-              <span className='expandButton' onClick={() => toggleSellerDetails()}>{state.expandedDetails ? 'Hide' : 'View Details'}</span>
             </section>
+
+            <ProductList title="You may like" link={HOME_PAGE} />
           </section>
 
           <section className="productFooter">

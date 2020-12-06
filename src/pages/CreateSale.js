@@ -1,18 +1,18 @@
-import React, { useContext, useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import React, {useContext, useState} from 'react';
+import {useHistory} from 'react-router-dom';
+import {motion} from 'framer-motion';
 
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { string, object, mixed, array } from 'yup';
+import {useForm} from 'react-hook-form';
+import {yupResolver} from '@hookform/resolvers/yup';
+import {mixed, object, string} from 'yup';
 
-import { ProductContext } from '../contexts/ProductsProvider.jsx';
-import { useStore } from '../hooks/useStore.jsx';
+import {ProductContext} from '../contexts/ProductsProvider.jsx';
+import {useStore} from '../hooks/useStore.jsx';
 
 import Header from '../components/Header';
 import Layout from '../components/Layout';
 
-import { PAGE_TRANSITION, PAGE_VARIANT_RIGHT } from '../constants';
+import {PAGE_TRANSITION, PAGE_VARIANT_RIGHT} from '../constants';
 
 export const schema = object().shape({
   title: string().required(),
@@ -24,20 +24,18 @@ export const schema = object().shape({
 
 const CreateSale = () => {
   let history = useHistory();
-  const { setProduct } = useContext(ProductContext);
-  const { getUserInfo } = useStore();
+  const {setProduct} = useContext(ProductContext);
+  const {getUserInfo} = useStore();
   const [imgs, setImg] = useState([]);
   const userInfo = getUserInfo();
 
-  const { register, handleSubmit, errors } = useForm({
+  const {register, handleSubmit, errors} = useForm({
     shouldFocusError: true,
     reValidateMode: 'onChange',
     resolver: yupResolver(schema),
   });
   const onSubmit = (data) => {
-    const { title, description, buyingPrice, sellingPrice, sellingDate } = data;
-
-    console.log(data);
+    const {title, description, buyingPrice, sellingPrice, sellingDate} = data;
 
     const productInstance = {
       id: userInfo.id,
@@ -59,7 +57,7 @@ const CreateSale = () => {
 
   const onFileAttached = (event) => {
     if (event.target.files?.length) {
-      const { files } = event.target;
+      const {files} = event.target;
       const reader = new FileReader();
       reader.onload = () => {
         if (reader.result) {
@@ -81,32 +79,25 @@ const CreateSale = () => {
       exit="out"
       transition={PAGE_TRANSITION}
       variants={PAGE_VARIANT_RIGHT}>
-      <Layout classNamePage="create-sale-page">
-        <Header back={true} title="Create Selling" />
-        <main>
+      <Header back={true} title="Create Selling"/>
+      <Layout>
+        <section className="createSellingPage">
           <form className="formCreateSelling" onSubmit={handleSubmit(onSubmit)}>
             <div className="whiteBgc">
               <div className="section">
                 <div className="photo">
                   <h2>Add Photo</h2>
                   <div className="photosContainer">
-                    {imgs.length !== 0
-                      ? imgs.map((imgItem, i) => (
-                          <div key={imgItem} className="photoItem">
-                            <span
-                              onClick={() => {
-                                removeImg(i);
-                              }}
-                              className="deleteImg">
-                              <img src="./cancel.svg" alt="" />
-                            </span>
-                            <img className="image" src={imgItem} alt="" />
-                          </div>
-                        ))
-                      : null}
+                    {imgs.length !== 0 ? imgs.map((imgItem, i) => (
+                      <div key={imgItem} className="photoItem">
+                        <span onClick={() => {
+                          removeImg(i)
+                        }} className="deleteImg"><img src="./cancel.svg" alt="Cancel"/></span>
+                        <img className="image" src={imgItem} alt="Product"/>
+                      </div>)) : null}
 
                     <label className="addPhotoContainer" htmlFor="inputFile">
-                      <img className="icon" src="./add.svg" alt="" />
+                      <img className="icon" src="./add.svg" alt="Upload"/>
                     </label>
                     <input
                       accept="image/png, image/jpg, image/jpeg,"
@@ -172,6 +163,7 @@ const CreateSale = () => {
                   name="sellingPrice"
                   className="input"
                   type="number"
+
                   placeholder="$"
                 />
                 {errors.sellingPrice && (
@@ -196,16 +188,13 @@ const CreateSale = () => {
                 )}
               </div>
             </div>
+            <div className="btnSubmitContainer">
+              <button className="submitBtn" type="submit">
+                Post Now
+              </button>
+            </div>
           </form>
-        </main>
-        <div className="btnSumbitContainer">
-          <button
-            className="submitBtnSelling"
-            type="button"
-            onClick={handleSubmit(onSubmit)}>
-            Post Now
-          </button>
-        </div>
+        </section>
       </Layout>
     </motion.div>
   );

@@ -59,11 +59,6 @@ body {
   color: red;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff;
-}
 input,
 textarea {
   color: #000000;
@@ -72,14 +67,12 @@ textarea {
   color: #9795a6;
 }
 
-.submitBtnSelling {
-  position: absolute;
-  bottom: 0;
+.submitBtn {
   margin: 15px auto;
   background: #2c5cf6;
   color: #ffffff;
   text-transform: uppercase;
-  font-family: Bebas Neue;
+  font-family: "Bebas Neue", sans-serif;
   letter-spacing: 2px;
   font-weight: normal;
   font-size: 20px;

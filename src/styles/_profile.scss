@@ -1,9 +1,13 @@
 .profileWrapper {
   background-color: #ffffff;
+  margin-top: 150px;
+  height: 100%;
   .headerSection {
+    padding: 15px;
     background-color: transparent;
     display: flex;
-    .profilePhoto{
+    margin-top: -70px;
+    .profilePhoto {
       height: 100px;
       width: 100px;
       border-radius: 50%;
@@ -11,6 +15,58 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-right: 20px;
+      img {
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+      }
+    }
+    h1 {
+      margin: 0;
+      text-transform: uppercase;
+      font-weight: normal;
+      margin-top: 20px;
+      font-size: 24px;
+    }
+    .userInformation {
+      margin-top: 20px;
+      padding: 15px;
+      div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        img {
+          margin-right: 15px;
+        }
+        span {
+          color: #c3c3c3;
+        }
+      }
+      a {
+        color: #2c5cf6;
+        font-size: 14px;
+      }
+    }
+  }
+}
+.profileListActions {
+  border-top: 1px solid #D1D3D4;
+  height: 100%;
+  section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #D1D3D4;
+    width: 95%;
+    margin-left: auto;
+    padding-right: 15px;
+    p {
+      text-transform: uppercase;
+      font-size: 24px;
+      font-family: Bebas Neue;
+      letter-spacing: 1px;
+      font-weight: normal;
     }
   }
 }

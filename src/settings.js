@@ -1,0 +1,1 @@
+export const COMMITMENT_PERCENTS = 20; // 20 %

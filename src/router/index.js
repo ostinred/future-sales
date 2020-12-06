@@ -4,7 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import Home from '../pages/Home';
 
 import CreateSale from '../pages/CreateSale.js';
-import Checkout from '../pages/Checkout';
+import Checkout from "../pages/Checkout";
 import Deals from '../pages/Deals';
 import Profile from '../pages/Profile';
 import Product from '../pages/Product';
@@ -19,6 +19,10 @@ import {
   PRODUCT_PAGE,
   WISHLIST_PAGE,
 } from './routes';
+import Shipment from "../pages/Checkout/Shipment";
+import Payment from "../pages/Checkout/Payment";
+import Finish from "../pages/Checkout/Finish";
+import React from "react";
 
 const Routes = () => {
   const history = useHistory();

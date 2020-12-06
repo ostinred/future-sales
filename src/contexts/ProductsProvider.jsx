@@ -3,7 +3,7 @@ import _ from "lodash";
 
 const productsExample = [
   {
-    id: 0,
+    id: "4ec85ba4-f933-463e-a4a4-4484ef239aad",
     category: "Tech",
     title: "Apple",
     images: [],
@@ -17,21 +17,7 @@ const productsExample = [
     status: 'active'
   },
   {
-    id: 0,
-    category: "Tech",
-    title: "Apple",
-    images: [],
-    description: "desc",
-    buyingPrice: 43,
-    sellingPrice: 35,
-    sellingDate: 2,
-    publishedAt: '12 29 2020',
-    seller: 'linkToProfile',
-    viewsCount: 3,
-    status: 'active'
-  },
-  {
-    id: 1,
+    id: "7b4a4c3e-8433-4075-a4c8-0e4ef78f15ad",
     category: "Other",
     title: "Book",
     images: [],
@@ -45,7 +31,7 @@ const productsExample = [
     status: 'active'
   },
   {
-    id: 2,
+    id: "ee22d980-5c67-44ff-8abc-8b6a2d4f3dd0",
     category: "Auto",
     title: "BMW",
     images: [],
@@ -59,7 +45,7 @@ const productsExample = [
     status: 'active'
   },
   {
-    id: 2,
+    id: "23ff0663-b2ba-40cc-956d-227cf6e365f7",
     category: "Nature",
     title: "Dog",
     images: [],
@@ -72,8 +58,6 @@ const productsExample = [
     viewsCount: 3,
     status: 'active'
   },
-
-
 ]
 
 export const ProductContext = createContext(productsExample);
@@ -99,10 +83,15 @@ export const ProductProvider = ({ children }) => {
     return [...products]
   }
 
+  const getProduct = (id) => {
+    return _.find(products, (o) => o.id === id);
+  }
+
   const ctx = {
     setProduct,
     getAllProducts,
-    deleteProduct
+    deleteProduct,
+    getProduct,
   }
   return <ProductContext.Provider value={ ctx }>{ children }</ProductContext.Provider>;
 };

@@ -4,4 +4,6 @@ export const CREATE_SALE_PAGE = '/create-sale';
 export const CHECKOUT_PAGE = '/checkout';
 export const DEALS_PAGE = '/deals';
 export const PROFILE_PAGE = '/profile';
+export const SHOP_PAGE = '/shop';
+export const WISHLIST_PAGE = '/wishlist';
 export const PRODUCT_PAGE = '/product';

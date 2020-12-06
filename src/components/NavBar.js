@@ -3,14 +3,12 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import {
-  CREATE_SELLING,
-  SERVICE_PAGE,
-  CHECKOUT_PAGE,
   CREATE_SALE_PAGE,
   DEALS_PAGE,
   HOME_PAGE,
-  PRODUCT_PAGE,
   PROFILE_PAGE,
+  SHOP_PAGE,
+  WISHLIST_PAGE,
 } from '../router/routes';
 
 const nav = [
@@ -18,11 +16,11 @@ const nav = [
     page: 'Homepage',
     link: HOME_PAGE,
   },
-  { page: 'Create sale', link: CREATE_SALE_PAGE },
-  { page: 'Checkout', link: CHECKOUT_PAGE },
+  { page: 'Shop', link: SHOP_PAGE },
+  { page: 'Wishlist', link: WISHLIST_PAGE },
+  { page: 'Create', link: CREATE_SALE_PAGE },
   { page: 'Deals', link: DEALS_PAGE },
   { page: 'Profile', link: PROFILE_PAGE },
-  { page: 'Product', link: PRODUCT_PAGE },
 ];
 
 const NavBar = () => {

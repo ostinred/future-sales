@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import Layout from '../components/Layout';
 import Input from '../components/Input';
 
-import { PAGE_VARIANT_RIGHT, PAGE_TRANSITION } from '../constants';
+import { PAGE_VARIANT_BASIC, PAGE_TRANSITION } from '../constants';
 
 const Checkout = () => {
   const [name, setName] = useState();
@@ -24,7 +24,7 @@ const Checkout = () => {
       animate="in"
       exit="out"
       transition={PAGE_TRANSITION}
-      variants={PAGE_VARIANT_RIGHT}>
+      variants={PAGE_VARIANT_BASIC}>
       <Header />
       <Layout classNamePage="checkout-page">
         <h1>Checkout</h1>

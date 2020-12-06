@@ -6,7 +6,7 @@ import NavBar from '../components/NavBar';
 
 import { PAGE_TRANSITION, PAGE_VARIANT_BASIC } from '../constants';
 
-const Deals = () => {
+const WishList = () => {
   return (
     <motion.div
       initial="initial"
@@ -21,4 +21,4 @@ const Deals = () => {
   );
 };
 
-export default Deals;
+export default WishList;

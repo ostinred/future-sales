@@ -8,6 +8,7 @@ import Checkout from '../pages/Checkout';
 import Deals from '../pages/Deals';
 import Profile from '../pages/Profile';
 import Product from '../pages/Product';
+import WishList from '../pages/WishList';
 
 import {
   CREATE_SALE_PAGE,
@@ -16,6 +17,7 @@ import {
   DEALS_PAGE,
   PROFILE_PAGE,
   PRODUCT_PAGE,
+  WISHLIST_PAGE,
 } from './routes';
 
 const Routes = () => {
@@ -34,6 +36,8 @@ const Routes = () => {
                 <Route exact path={DEALS_PAGE} component={Deals} />
                 <Route exact path={PRODUCT_PAGE} component={Product} />
                 <Route exact path={PROFILE_PAGE} component={Profile} />
+                <Route exact path={WISHLIST_PAGE} component={WishList} />
+
                 <Redirect to={HOME_PAGE} />
               </Switch>
             </AnimatePresence>

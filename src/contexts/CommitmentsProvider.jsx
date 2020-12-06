@@ -4,7 +4,7 @@ import React, { createContext, useState } from 'react';
 
 const commitmentsExample = [
   {
-    id: v4(),
+    id: 'dd1e8ce5-ba88-4863-b7a1-de2ccbd1f74f',
     product: 'Product',
     createdBy: 'Profile',
     shippingAddress: 'New York',
@@ -12,7 +12,7 @@ const commitmentsExample = [
     status: 'in progress',
   },
   {
-    id: v4(),
+    id: "7f46d763-80df-4ad3-b44b-3cc86daa892b",
     product: 'Product',
     createdBy: 'Profile',
     shippingAddress: 'New York',
@@ -20,7 +20,7 @@ const commitmentsExample = [
     status: 'in progress',
   },
   {
-    id: v4(),
+    id: "9d514096-b83f-4b31-8196-205c059451cb",
     product: 'Product',
     createdBy: 'Profile',
     shippingAddress: 'New York',

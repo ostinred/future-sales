@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { string, object } from 'yup';
+import { string, object , mixed, array} from 'yup';
 
 import { ProductContext } from '../contexts/ProductsProvider.jsx'
 import { useStore } from '../hooks/useStore.jsx'
@@ -19,11 +19,12 @@ export const schema = object().shape({
   description: string().required(),
   buyingPrice: string().required(),
   sellingPrice: string().required(),
+  image: mixed().required("Image is required")
 });
 
 const CreateSale = () => {
   let history = useHistory();
-  const { setProduct, getAllProducts } = useContext(ProductContext)
+  const { setProduct } = useContext(ProductContext)
   const { getUserInfo } = useStore()
   const [imgs, setImg] = useState([]);
   const userInfo = getUserInfo()
@@ -33,13 +34,17 @@ const CreateSale = () => {
     reValidateMode: 'onChange',
     resolver: yupResolver(schema),
   });
-  const onSubmit = ({
-    title,
-    description,
-    buyingPrice,
-    sellingPrice,
-    sellingDate,
-  }) => {
+  const onSubmit = (data) => {
+    const {
+      title,
+      description,
+      buyingPrice,
+      sellingPrice,
+      sellingDate,
+    } = data
+
+    console.log(data);
+
     const productInstance = {
       id: userInfo.id,
       category: 'Other',
@@ -54,8 +59,8 @@ const CreateSale = () => {
       status: 'active',
       images: imgs
     };
-    setProduct(productInstance);
-    history.push("/future-sales/deals");
+    //setProduct(productInstance);
+    //history.push("/future-sales/deals");
   };
 
   const onFileAttached = (event) => {
@@ -84,14 +89,14 @@ const CreateSale = () => {
       variants={ PAGE_VARIANT_RIGHT }>
       <Header />
       <Layout classNamePage="create-sale-page">
-        <form onSubmit={ handleSubmit(onSubmit) }>
+        <form className="formCreateSelling" onSubmit={ handleSubmit(onSubmit) }>
           <div className="whiteBgc">
             <div className="section">
               <div className="photo">
                 <h2>Add Photo</h2>
                 <div className="photosContainer">
                   { imgs.length !== 0 ? imgs.map((imgItem, i) => (
-                    <div className="photoItem">
+                    <div key={imgItem} className="photoItem">
                       <span onClick={()=>{removeImg(i)}} className="deleteImg"><img src="./cancel.svg" /></span>
                       <img className="image" src={ imgItem } alt="" />
                     </div>)) : null}
@@ -108,6 +113,9 @@ const CreateSale = () => {
                     id="inputFile"
                   />
                 </div>
+                { errors.image && (
+                <span className="inputError">{ errors.image?.message }</span>
+              ) }
               </div>
             </div>
             <div className="section">
@@ -144,7 +152,7 @@ const CreateSale = () => {
                 ref={ register }
                 name="buyingPrice"
                 className="input"
-                type="text"
+                type="number"
                 placeholder="$"
               />
               { errors.buyingPrice && (
@@ -154,12 +162,13 @@ const CreateSale = () => {
               ) }
             </div>
             <div className="section">
-              <h2>Selling date</h2>
+              <h2>Selling price</h2>
               <input
                 ref={ register }
                 name="sellingPrice"
                 className="input"
-                type="text"
+                type="number"
+
                 placeholder="$"
               />
               { errors.sellingPrice && (
@@ -184,9 +193,11 @@ const CreateSale = () => {
               ) }
             </div>
           </div>
-          <button className="submitBtn" type="submit">
+          <div className="btnSumbitContainer">
+          <button className="submitBtnSelling" type="submit">
             Post Now
           </button>
+          </div>
         </form>
       </Layout>
     </motion.div>

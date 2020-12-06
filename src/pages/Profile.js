@@ -16,6 +16,13 @@ const Profile = () => {
       variants={PAGE_VARIANT_BASIC}>
       <Layout classNamePage="with-navbar">
         <NavBar />
+        <div className="profileWrapper">
+          <div className="headerSection">
+            <div className="profilePhoto">
+              <img />
+            </div>
+          </div>
+        </div>
       </Layout>
     </motion.div>
   );

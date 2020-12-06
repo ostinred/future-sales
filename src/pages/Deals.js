@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 import { useStore } from '../hooks/useStore.jsx'
@@ -13,7 +13,7 @@ import { PAGE_TRANSITION, PAGE_VARIANT_BASIC } from '../constants';
 
 const Deals = () => {
   const [tab, setTab] = useState("selling");
-  const { getAllCommitments, getAllProducts, getUserInfo } = useStore()
+  const { getAllCommitments, getAllProducts, getUserInfo, getProduct } = useStore()
 
   const commitments = getAllCommitments();
   const selling = getAllProducts();
@@ -21,7 +21,7 @@ const Deals = () => {
 
   const isSellingTab = tab === "selling"
   const isCommitmentsTab = tab === "commitments"
-  console.log(selling);
+
   return (
     <motion.div
       initial="initial"
@@ -37,8 +37,13 @@ const Deals = () => {
           <button onClick={ () => setTab("commitments") } className={ isCommitmentsTab ? 'activeTab' : "" }>Commitment</button>
         </div>
         <div className="list">
-          { isSellingTab && selling.filter((o) => o.id === userInfo.id).map(product => <ProductItem isSelling key={ product.id } product={ product } />) }
-          {/* { isCommitmentsTab &&  */}
+          { isSellingTab && <p>There is no selling yet..</p> }
+          { isSellingTab && isSellingTab.length > 0 ? selling.filter((o) => o.id === userInfo.id).map(product => <ProductItem isSelling key={ product.id } product={ product } />) : null }
+          { isCommitmentsTab && commitments.map(commitment => {
+            const product = getProduct(commitment.id)
+            return <ProductItem key={ commitment.id } product={ product } />
+          })
+          }
         </div>
       </Layout>
     </motion.div>

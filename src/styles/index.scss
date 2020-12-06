@@ -63,7 +63,9 @@ textarea {
   color: #9795a6;
 }
 
-.submitBtn {
+.submitBtnSelling {
+  position: absolute;
+  bottom: 0;
   margin: 15px auto;
   background: #2c5cf6;
   color: #ffffff;
@@ -74,7 +76,7 @@ textarea {
   font-size: 20px;
   border: none;
   text-align: center;
-  width: 95%;
+  width: 90%;
   border-radius: 15px;
   padding: 15px;
 }

@@ -2,21 +2,23 @@
   width: 100%
   h2
     font-size: 18px
+    font-family: Karla
   .input, .textarea
     border: none
     color: #C4C4C4
-    background-color: #FAF7F7
-    width: 95%
+    background-color: #fff
+    width: 100%
     height: 40px
     padding: 10px
     border-radius: 15px
   .textarea
     height: 200px
 
+
 .addPhotoContainer
   height: 80px
-  width: 80px
-  border: 1px dashed #000
+  min-width: 80px
+  border: 2px dashed #2C5CF6
   border-radius: 15px
   display: flex
   align-items: center
@@ -25,6 +27,34 @@
   .icon
     height: 30px
     width: auto
+
+.photosContainer
+  display: flex
+  overflow: scroll
+  padding: 10px 0
+  .photoItem
+    position: relative
+    background-color: #fff
+    border-radius: 15px
+    display: flex
+    align-items: center
+    margin: 0 10px
+    min-width: 80px
+    justify-content: center
+    align-items: center
+    .deleteImg
+      position: absolute
+      right: -5px
+      top: -5px
+      background-color: #fff
+      height: 20px
+      width: 20px
+      border-radius: 50%
+      display: flex
+      justify-content: center
+      align-items: center
+    img
+      max-height: 50px
 
 
 input[type="file"]

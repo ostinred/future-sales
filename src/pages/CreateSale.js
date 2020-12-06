@@ -24,8 +24,8 @@ export const schema = object().shape({
 const CreateSale = () => {
   let history = useHistory();
   const { setProduct, getAllProducts } = useContext(ProductContext)
-  const {getUserInfo} = useStore()
-  const [img, setImg] = useState("");
+  const { getUserInfo } = useStore()
+  const [imgs, setImg] = useState([]);
   const userInfo = getUserInfo()
 
   const { register, handleSubmit, errors, setError, clearErrors } = useForm({
@@ -52,7 +52,7 @@ const CreateSale = () => {
       seller: userInfo.id,
       viewCount: 3,
       status: 'active',
-      img
+      images: imgs
     };
     setProduct(productInstance);
     history.push("/future-sales/deals");
@@ -64,12 +64,16 @@ const CreateSale = () => {
       const reader = new FileReader();
       reader.onload = () => {
         if (reader.result) {
-          setImg(`${reader.result}`);
+          setImg(prev => [...prev, `${reader.result}`]);
         }
       };
       reader.readAsDataURL(files[0]);
     }
   };
+  const removeImg = (index)=>{
+    const filtered = imgs.filter((_, i)=> i !== index);
+    setImg(filtered)
+  }
 
   return (
     <motion.div
@@ -85,18 +89,25 @@ const CreateSale = () => {
             <div className="section">
               <div className="photo">
                 <h2>Add Photo</h2>
-                <label className="addPhotoContainer" htmlFor="inputFile">
-                  { !img && <img className="icon" src="./add.svg" alt="" /> }
-                  { img && <img className="image" src={ img } alt="" /> }
-                </label>
-                <input
-                  accept="image/png, image/jpg, image/jpeg,"
-                  type="file"
-                  name="image"
-                  ref={ register }
-                  onChange={ onFileAttached }
-                  id="inputFile"
-                />
+                <div className="photosContainer">
+                  { imgs.length !== 0 ? imgs.map((imgItem, i) => (
+                    <div className="photoItem">
+                      <span onClick={()=>{removeImg(i)}} className="deleteImg"><img src="./cancel.svg" /></span>
+                      <img className="image" src={ imgItem } alt="" />
+                    </div>)) : null}
+
+                  <label className="addPhotoContainer" htmlFor="inputFile">
+                    <img className="icon" src="./add.svg" alt="" />
+                  </label>
+                  <input
+                    accept="image/png, image/jpg, image/jpeg,"
+                    type="file"
+                    name="image"
+                    ref={ register }
+                    onChange={ onFileAttached }
+                    id="inputFile"
+                  />
+                </div>
               </div>
             </div>
             <div className="section">

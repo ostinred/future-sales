@@ -21,7 +21,7 @@ const Deals = () => {
 
   const isSellingTab = tab === "selling"
   const isCommitmentsTab = tab === "commitments"
-
+  console.log(selling);
   return (
     <motion.div
       initial="initial"

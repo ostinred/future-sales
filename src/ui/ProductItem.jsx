@@ -1,11 +1,11 @@
 import React from "react"
 
 export const ProductItem = ({ product, isSelling }) => {
-  const { title, status, sellingDate, sellingPrice, buyingPrice, description, img } = product;
+  const { title, status, sellingDate, sellingPrice, buyingPrice, description, images } = product;
   return (
     <div className='productItem'>
       <div className="shortInfo">
-        <img src={ img } alt="" />
+        <img src={ images[0] } alt="" />
         <div>
           <h3>{ title }</h3>
           <div className="shortInfoItem">

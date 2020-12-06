@@ -1,14 +1,14 @@
-@import 'normalize';
-@import 'fonts';
-@import 'variables';
-@import 'nav';
-@import 'layout';
-@import 'createSellingPage';
-@import 'deals';
-@import 'checkoutPage';
-@import 'categories';
-@import 'products';
-@import 'input';
+@import "normalize";
+@import "fonts";
+@import "variables";
+@import "nav";
+@import "layout";
+@import "createSellingPage";
+@import "deals";
+@import "checkoutPage";
+@import "categories";
+@import "products";
+@import "input";
 
 @media screen and (min-width: 500px) {
   html {
@@ -53,22 +53,34 @@ body {
 form {
   display: flex;
   flex-direction: column;
-  padding-bottom: 40px;
+  background-color: #ffffff;
+}
+input,
+textarea {
+  color: #000000;
+}
+::placeholder {
+  color: #9795a6;
 }
 
 .submitBtn {
   margin: 15px auto;
-  background-color: #c3c3c3;
+  background: #2c5cf6;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: Bebas Neue;
+  letter-spacing: 2px;
+  font-weight: normal;
+  font-size: 20px;
   border: none;
   text-align: center;
   width: 95%;
   border-radius: 15px;
   padding: 15px;
-  font-weight: bold;
 }
 
 .whiteBgc {
-  background-color: #fff;
+  background-color: #e5e5e5;
   padding: 20px;
   margin-left: auto;
   margin-right: auto;

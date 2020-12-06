@@ -1,6 +1,8 @@
 .nav-links {
   background-color: $white;
-
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   ul {
     display: flex;
     list-style-type: none;

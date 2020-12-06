@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { string, object, mixed, array } from 'yup';
+import { string, object, mixed } from 'yup';
 
 import { ProductContext } from '../contexts/ProductsProvider.jsx';
 import { useStore } from '../hooks/useStore.jsx';

@@ -83,9 +83,11 @@ const Checkout = () => {
       transition={PAGE_TRANSITION}
       variants={PAGE_VARIANT_BASIC}>
 
-      <Layout classNamePage="checkoutPage">
-        <Header currentStep={state.currentStep}/>
-        {renderStep(state.currentStep)}
+      <Layout>
+        <section className="checkoutPage">
+          <Header currentStep={state.currentStep}/>
+          {renderStep(state.currentStep)}
+        </section>
       </Layout>
     </motion.div>
   );

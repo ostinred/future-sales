@@ -1,16 +1,23 @@
-@import "normalize";
-@import "fonts";
-@import "variables";
-@import "nav";
-@import "layout";
-@import "createSellingPage";
-@import "deals";
-@import "checkoutPage";
-@import "categories";
-@import "products";
-@import "productPage";
-@import "input";
-@import "profile";
+@import 'normalize';
+@import 'fonts';
+@import 'variables';
+@import 'nav';
+@import 'layout';
+@import 'createSellingPage';
+@import 'deals';
+@import 'checkoutPage';
+@import 'categories';
+@import 'products';
+@import 'input';
+@import 'header';
+@import 'notifications';
+@import 'search';
+@import 'productPage';
+@import 'input';
+@import 'header';
+@import 'notifications';
+@import 'search';
+@import 'profile';
 
 @media screen and (min-width: 500px) {
   html {

@@ -24,7 +24,8 @@ const Finish = (props) => {
           <figcaption>
             <h4>You successfully committed to the product</h4>
             <p>It will be displayed in deals section</p>
-          </figcaption>
+          </
+          figcaption>
         </figure>
       </div>
 

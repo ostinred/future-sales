@@ -9,7 +9,9 @@
     padding: 16px;
     z-index: 1;
 
-    .backButton, .shareButton, .addToWishListButton {
+    .backButton,
+    .shareButton,
+    .addToWishListButton {
       position: absolute;
       top: 16px;
       z-index: 2;
@@ -58,7 +60,7 @@
         display: block;
         width: 16px;
         height: 4px;
-        background: #2C5CF6;
+        background: #2c5cf6;
         opacity: 0.2;
         border-radius: 2px;
         margin: 0 4px;

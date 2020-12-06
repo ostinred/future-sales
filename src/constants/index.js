@@ -13,6 +13,18 @@ export const PAGE_VARIANT_BASIC = {
   },
 };
 
+export const PAGE_VARIANT_OPACITY = {
+  initial: {
+    opacity: 0,
+  },
+  in: {
+    opacity: 1,
+  },
+  out: {
+    opacity: 0,
+  },
+};
+
 export const PAGE_VARIANT_RIGHT = {
   initial: {
     opacity: 0,
@@ -43,4 +55,18 @@ export const CATEGORIES = [
   { name: 'Sports', icon: 'icon-baseball' },
   { name: 'Clothes', icon: 'icon-clothes' },
   { name: 'Shoes', icon: 'icon-shoes' },
+];
+
+export const NOTIFICATIONS = [
+  {
+    date: 'Today, 13:00 PM',
+    title: 'Jane Doe commited to your product',
+    good: 'PS5 Digital Edition gaming console',
+  },
+  {
+    date: '5 Dec, 16:00 PM',
+    title:
+      'Selling date is coming. Don’t forget to prepair your product for shipping.',
+    good: 'PS5 Digital Edition gaming console',
+  },
 ];

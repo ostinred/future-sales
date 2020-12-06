@@ -1,0 +1,86 @@
+.productPage {
+  .productHeader {
+    height: 230px;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    z-index: 1;
+
+    .backButton, .shareButton, .addToWishListButton {
+      position: absolute;
+      top: 16px;
+      z-index: 2;
+      border: none;
+      background: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .backButton {
+      left: 16px;
+    }
+    .shareButton {
+      right: 54px;
+    }
+    .addToWishListButton {
+      right: 16px;
+    }
+
+    .imageCarousel {
+      text-align: center;
+
+      img {
+        display: inline-block;
+        width: auto;
+        height: 177px;
+      }
+    }
+
+    .imagesControls {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      z-index: 2;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+
+      li {
+        display: block;
+        width: 16px;
+        height: 4px;
+        background: #2C5CF6;
+        opacity: 0.2;
+        border-radius: 2px;
+        margin: 0 4px;
+
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .productBody {
+    margin: 230px 0 120px 0;
+  }
+
+  .productFooter {
+    height: 120px;
+    border-radius: 16px 16px 0 0;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}

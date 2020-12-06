@@ -7,6 +7,9 @@ import ProductItem from './ProductItem';
 const ProductList = ({ title, link }) => {
   const { getAllProducts } = useContext(ProductContext);
   const products = getAllProducts();
+  const getProductLink = (productId) => {
+    return `/product/${productId}`;
+  }
 
   return (
     <div className="product-list">
@@ -26,7 +29,7 @@ const ProductList = ({ title, link }) => {
               oldPrice={buyingPrice}
               newPrice={sellingPrice}
               image={images[0]}
-              productLink={HOME_PAGE}
+              productLink={getProductLink(id)}
               sellingDate={sellingDate}
             />
           )

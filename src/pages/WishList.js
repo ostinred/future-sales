@@ -19,6 +19,10 @@ const WishList = () => {
   const onSearchPageClick = () => history.push(SEARCH_PAGE);
   const onNotificationPageClick = () => history.push(NOTIFICATION_PAGE);
 
+  const getProductLink = (productId) => {
+    return `/product/${productId}`;
+  };
+
   return (
     <motion.div
       initial="initial"
@@ -45,7 +49,7 @@ const WishList = () => {
                 oldPrice={buyingPrice}
                 newPrice={sellingPrice}
                 image={images[0]}
-                productLink={HOME_PAGE}
+                productLink={getProductLink(id)}
                 sellingDate={sellingDate}
               />
             )

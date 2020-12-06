@@ -5,10 +5,15 @@ import ProductItem from './ProductItem';
 
 const ProductList = ({ title, link }) => {
   const { getAllProducts } = useContext(ProductContext);
-  const products = getAllProducts();
+  const products = getAllProducts().sort(function (a, b) {
+    if (a.publishedAt > b.publishedAt) {
+      return 1;
+    }
+    return -1;
+  });
   const getProductLink = (productId) => {
     return `/product/${productId}`;
-  }
+  };
 
   return (
     <div className="product-list">

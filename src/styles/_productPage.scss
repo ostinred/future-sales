@@ -26,9 +26,11 @@
     .backButton {
       left: 16px;
     }
+
     .shareButton {
       right: 54px;
     }
+
     .addToWishListButton {
       right: 16px;
     }
@@ -70,10 +72,298 @@
         }
       }
     }
+
+    .viewsCount, .discount {
+      position: absolute;
+      z-index: 2;
+      bottom: 0;
+      border-radius: 8px 8px 0 0;
+      text-align: center;
+    }
+
+    .viewsCount {
+      left: 8px;
+      padding: 0 8px;
+      height: 36px;
+      background-color: #F6F6F8;
+      font-family: "Karla", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 36px;
+      color: #000;
+
+      img {
+        margin-right: 8px;
+        position: relative;
+        top: 2px;
+      }
+    }
+
+    .discount {
+      right: 8px;
+      width: 60px;
+      height: 23px;
+      background-color: #EC546F;
+      font-family: "Karla", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 21px;
+      color: #fff;
+    }
   }
 
   .productBody {
     margin: 230px 0 120px 0;
+    padding-bottom: 16px;
+
+    .productMain {
+      padding: 16px 16px 0 16px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+
+      h1 {
+        flex: 2;
+        margin: 0;
+        font-size: 28px;
+        line-height: 34px;
+      }
+
+      .prices {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+
+        .buyingPrice {
+          font-family: "Karla", sans-serif;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 21px;
+          text-decoration-line: line-through;
+          color: #9795A6;
+        }
+
+        .sellingPrice {
+          font-family: "Karla", sans-serif;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 28px;
+          line-height: 21px;
+          color: #000;
+          padding-bottom: 8px;
+        }
+      }
+    }
+
+    > .time {
+      padding: 16px;
+      margin: 0;
+      font-family: "Karla", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 21px;
+      color: #9795A6;
+
+      img {
+        margin-right: 8px;
+        position: relative;
+        top: 2px;
+      }
+    }
+
+    > hr {
+      border: 0;
+      height: 0;
+      width: 100%;
+      border-top: 1px solid #D1D3D4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .description, .seller {
+      padding: 16px 16px 0 16px;
+
+      h6 {
+        font-family: "Karla", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 21px;
+        color: #9795A6;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .description {
+      > p {
+        max-height: 40px;
+        font-family: "Karla", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 21px;
+        color: #000;
+        overflow: hidden;
+      }
+
+      &.expanded > p {
+        max-height: none;
+      }
+    }
+
+    .expandButton {
+      font-family: "Karla", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 16px;
+      color: #2C5CF6;
+    }
+
+    > .expandButton {
+      margin-left: 16px;
+    }
+
+    .subscribe {
+      margin: 24px 16px;
+      background: #ffff;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: row;
+      padding: 8px 12px;
+      align-items: center;
+
+      .counter {
+        flex: 1;
+
+        > h6 {
+          font-family: "Karla", sans-serif;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 30px;
+          color: #9795A6;
+          margin: 0;
+        }
+
+        > span {
+          padding-top: 8px;
+          font-family: "Karla", sans-serif;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 21px;
+          color: #000;
+        }
+      }
+
+      .action {
+        width: 68px;
+
+        .subscribeButton {
+          font-family: "Karla", sans-serif;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 16px;
+          text-align: right;
+          color: #2C5CF6;
+        }
+      }
+    }
+
+    .seller {
+      > figure {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+
+        > .imageWrapper {
+          width: 54px;
+          height: 54px;
+          background-color: #fff;
+          border-radius: 50%;
+          padding: 3px;
+          box-sizing: border-box;
+
+          > img {
+            border: 0;
+            border-radius: 50%;
+          }
+        }
+
+        > figcaption {
+          padding: 8px;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+
+          > h6 {
+            font-family: "Karla", sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 21px;
+            color: #000;
+          }
+
+          > .location {
+            margin: 0;
+            font-family: "Karla", sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 21px;
+            color: #000000;
+
+            > img {
+              position: relative;
+              top: 4px;
+              left: -2px;
+              margin-right: 4px;
+            }
+          }
+
+          > .sellerDetails {
+            height: 0;
+            overflow: hidden;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            transition: height .25s;
+
+            li {
+              line-height: 22px;
+
+              .label {
+                font-size: 14px;
+                color: #9795a6;
+              }
+
+              .value {
+                font-size: 16px;
+                color: #000;
+              }
+            }
+          }
+
+          > .expandButton {
+            margin-top: 10px;
+          }
+        }
+      }
+
+      &.expanded > figure > figcaption > .sellerDetails {
+        height: 46px;
+      }
+    }
   }
 
   .productFooter {
@@ -84,5 +374,28 @@
     left: 0;
     bottom: 0;
     right: 0;
+    padding: 12px 16px 16px 16px;
+
+    > .payNowOnly {
+      text-align: center;
+      font-family: "Karla", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 21px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+
+      > .actualPrice {
+        font-weight: bold;
+      }
+    }
+
+    > .submitBtn {
+      display: inline-block;
+      text-decoration: none;
+      width: 100%;
+    }
   }
 }

@@ -1,84 +1,97 @@
-.section
-  width: 100%
-  h2
-    font-size: 18px
-    font-family: Karla
-  .input, .textarea
-    border: none
-    color: #C4C4C4
-    background-color: #fff
+.createSellingPage
+  .section
     width: 100%
-    height: 40px
-    padding: 10px
-    border-radius: 15px
-  .textarea
-    height: 200px
+    h2
+      font-size: 18px
+      font-family: "Karla", sans-serif
+    .input, .textarea
+      border: none
+      color: #C4C4C4
+      background-color: #fff
+      width: 100%
+      height: 40px
+      padding: 10px
+      border-radius: 16px
+    .textarea
+      height: 200px
 
-.formCreateSelling
-  position: relative
-  padding-bottom: 85px
-
-.btnSumbitContainer
-  padding: 0 15px
-
-.addPhotoContainer
-  height: 80px
-  min-width: 80px
-  border: 2px dashed #2C5CF6
-  border-radius: 15px
-  display: flex
-  align-items: center
-  justify-content: center
-  overflow: hidden
-  .icon
-    height: 30px
-    width: auto
-
-.photosContainer
-  display: flex
-  overflow: scroll
-  padding: 10px 0
-  .photoItem
+  .formCreateSelling
     position: relative
-    background-color: #fff
-    border-radius: 15px
+
+  .whiteBgc
+    background-color: #e5e5e5
+    padding: 20px
+    margin-bottom: 120px
+
+  .btnSubmitContainer
+    position: fixed
+    bottom: 0
+    left: 0
+    right: 0
+    border-radius: 16px 16px 0 0
+    background: #fff
+    padding: 16px
+    .submitBtn
+      width: 100%
+      margin: 0
+
+  .addPhotoContainer
+    height: 80px
+    min-width: 80px
+    border: 2px dashed #2C5CF6
+    border-radius: 16px
     display: flex
     align-items: center
-    margin: 0 10px
-    min-width: 80px
     justify-content: center
-    align-items: center
-    .deleteImg
-      position: absolute
-      right: -5px
-      top: -5px
+    overflow: hidden
+    .icon
+      height: 30px
+      width: auto
+
+  .photosContainer
+    display: flex
+    overflow: scroll
+    padding: 10px 0
+    .photoItem
+      position: relative
       background-color: #fff
-      height: 20px
-      width: 20px
-      border-radius: 50%
+      border-radius: 16px
       display: flex
-      justify-content: center
       align-items: center
-    img
-      max-height: 50px
+      margin: 0 10px
+      min-width: 80px
+      justify-content: center
+      .deleteImg
+        position: absolute
+        right: -5px
+        top: -5px
+        background-color: #fff
+        height: 20px
+        width: 20px
+        border-radius: 50%
+        display: flex
+        justify-content: center
+        align-items: center
+      img
+        max-height: 50px
 
 
-input[type="file"]
-  display: none
+  input[type="file"]
+    display: none
 
-.tabs
-  background-color: #c3c3c3
-  height: 40px
-  display: flex
-  justify-content: space-between
-  align-items: center
-  border-radius: 15px
-  button
-    border-radius: 15px
-    height: 100%
-    border: none
-    padding: 10px
-    width: 48%
+  .tabs
     background-color: #c3c3c3
-    &.activeTab
-      background-color: #ffffff
+    height: 40px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border-radius: 16px
+    button
+      border-radius: 16px
+      height: 100%
+      border: none
+      padding: 10px
+      width: 48%
+      background-color: #c3c3c3
+      &.activeTab
+        background-color: #ffffff

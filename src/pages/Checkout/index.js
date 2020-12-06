@@ -17,7 +17,7 @@ import {UserContext} from "../../contexts/UserProvider";
 
 const Checkout = () => {
   const [state, setState] = useState({
-    currentStep: STEP_PAYMENT,
+    currentStep: STEP_SHIPMENT,
   });
   const {productId} = useParams();
   const {getUserInfo} = useContext(UserContext);

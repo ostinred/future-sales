@@ -19,9 +19,6 @@ import {
   PRODUCT_PAGE,
   WISHLIST_PAGE,
 } from './routes';
-import Shipment from "../pages/Checkout/Shipment";
-import Payment from "../pages/Checkout/Payment";
-import Finish from "../pages/Checkout/Finish";
 import React from "react";
 
 const Routes = () => {

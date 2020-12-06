@@ -22,8 +22,9 @@
     width: 100%;
     height: 100%;
     min-height: 812px;
-    max-height: 900px;
+    // max-height: 900px;
     border: 1px solid #ccc;
+    border-radius: 5px;
   }
 }
 
@@ -32,8 +33,6 @@
 }
 
 html {
-  min-height: 100vh;
-  height: 100%;
   scroll-behavior: smooth;
 }
 
@@ -41,15 +40,10 @@ body {
   background-color: #faf7f7;
   max-width: 414px;
   margin: 0 auto;
-  height: 100%;
 }
 
 #root {
-  &,
-  & > div {
-    height: 100%;
-    overflow: hidden;
-  }
+  overflow-x: hidden;
 }
 
 .inputError {
@@ -79,5 +73,4 @@ form {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-
 }

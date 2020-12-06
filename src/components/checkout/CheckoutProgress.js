@@ -1,5 +1,9 @@
 import React from 'react';
-import {STEP_FINISH, STEP_PAYMENT, STEP_SHIPMENT} from "../../pages/Checkout/constants";
+import {
+  STEP_FINISH,
+  STEP_PAYMENT,
+  STEP_SHIPMENT,
+} from '../../pages/Checkout/constants';
 
 const CheckoutProgress = (props) => {
   const middleClass = props.currentStep === STEP_FINISH ? 'completed' : ''

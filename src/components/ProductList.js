@@ -1,11 +1,15 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ProductContext } from '../contexts/ProductsProvider';
+import { HOME_PAGE } from '../router/routes';
+import ProductItem from './ProductItem';
 
 const ProductList = ({ title, link }) => {
   const { getAllProducts } = useContext(ProductContext);
 
-  console.log('useContext', getAllProducts());
+  const products = getAllProducts();
+
+  console.log('products', products);
 
   return (
     <div className="product-list">
@@ -15,6 +19,21 @@ const ProductList = ({ title, link }) => {
           See All
           <i className="icon-arrow-right" />
         </NavLink>
+      </div>
+      <div className="products-row">
+        {products.map(
+          ({ id, title, buyingPrice, sellingPrice, images, sellingDate }) => (
+            <ProductItem
+              key={id}
+              name={title}
+              oldPrice={buyingPrice}
+              newPrice={sellingPrice}
+              image={images[0]}
+              productLink={HOME_PAGE}
+              sellingDate={sellingDate}
+            />
+          )
+        )}
       </div>
     </div>
   );

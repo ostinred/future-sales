@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 
 import Layout from '../components/Layout';
 import NavBar from '../components/NavBar';
+import Header from '../components/Header';
 
 import Categories from '../components/Categories';
 import ProductList from '../components/ProductList';
@@ -18,11 +19,13 @@ const Home = () => {
       exit="out"
       transition={PAGE_TRANSITION}
       variants={PAGE_VARIANT_BASIC}>
-      <Layout classNamePage="with-navbar">
-        <Categories />
-
-        <ProductList title="The most popular" link={HOME_PAGE} />
-        <ProductList title="Top sales" link={HOME_PAGE} />
+      <Layout>
+        <Header />
+        <main>
+          <Categories />
+          <ProductList title="The most popular" link={HOME_PAGE} />
+          <ProductList title="Top sales" link={HOME_PAGE} />
+        </main>
         <NavBar />
       </Layout>
     </motion.div>

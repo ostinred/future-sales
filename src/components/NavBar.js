@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { HOME_PAGE, SERVICE_PAGE } from '../router/routes';
+import { HOME_PAGE, SERVICE_PAGE, CREATE_SELLING } from '../router/routes';
 
 const NavBar = () => {
   return (
@@ -13,6 +13,12 @@ const NavBar = () => {
         className="nav-link"
         to={SERVICE_PAGE}>
         Service
+      </NavLink>
+      <NavLink
+        activeClassName="is-active"
+        className="nav-link"
+        to={CREATE_SELLING}>
+        Create Selling
       </NavLink>
     </div>
   );

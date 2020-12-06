@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 3</title>
+    <g id="Tablet" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Tablet/Account-Edit-Class" transform="translate(-151.000000, -366.000000)" fill-rule="nonzero" stroke="#012D30" stroke-width="2.4">
+            <g id="Group-4" transform="translate(16.800000, 255.200000)">
+                <g id="Group-3" transform="translate(144.000000, 120.800000) rotate(-90.000000) translate(-144.000000, -120.800000) translate(134.400000, 111.200000)">
+                    <line x1="9.6" y1="0" x2="9.6" y2="19.2" id="Line-2"></line>
+                    <line x1="0" y1="9.6" x2="19.2" y2="9.6" id="Line-2-Copy"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/future-sales/static/css/main.2c569f8d.chunk.css",
-    "main.js": "/future-sales/static/js/main.907b30f5.chunk.js",
-    "main.js.map": "/future-sales/static/js/main.907b30f5.chunk.js.map",
+    "main.css": "/future-sales/static/css/main.d04e593b.chunk.css",
+    "main.js": "/future-sales/static/js/main.62e683b7.chunk.js",
+    "main.js.map": "/future-sales/static/js/main.62e683b7.chunk.js.map",
     "runtime-main.js": "/future-sales/static/js/runtime-main.4b84fa6e.js",
     "runtime-main.js.map": "/future-sales/static/js/runtime-main.4b84fa6e.js.map",
-    "static/js/2.11f7504b.chunk.js": "/future-sales/static/js/2.11f7504b.chunk.js",
-    "static/js/2.11f7504b.chunk.js.map": "/future-sales/static/js/2.11f7504b.chunk.js.map",
+    "static/js/2.a51a1d65.chunk.js": "/future-sales/static/js/2.a51a1d65.chunk.js",
+    "static/js/2.a51a1d65.chunk.js.map": "/future-sales/static/js/2.a51a1d65.chunk.js.map",
     "static/js/3.b7d1f697.chunk.js": "/future-sales/static/js/3.b7d1f697.chunk.js",
     "static/js/3.b7d1f697.chunk.js.map": "/future-sales/static/js/3.b7d1f697.chunk.js.map",
     "index.html": "/future-sales/index.html",
-    "static/css/main.2c569f8d.chunk.css.map": "/future-sales/static/css/main.2c569f8d.chunk.css.map",
-    "static/js/2.11f7504b.chunk.js.LICENSE.txt": "/future-sales/static/js/2.11f7504b.chunk.js.LICENSE.txt",
+    "static/css/main.d04e593b.chunk.css.map": "/future-sales/static/css/main.d04e593b.chunk.css.map",
+    "static/js/2.a51a1d65.chunk.js.LICENSE.txt": "/future-sales/static/js/2.a51a1d65.chunk.js.LICENSE.txt",
     "static/media/logo.32b7b2d7.svg": "/future-sales/static/media/logo.32b7b2d7.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.4b84fa6e.js",
-    "static/js/2.11f7504b.chunk.js",
-    "static/css/main.2c569f8d.chunk.css",
-    "static/js/main.907b30f5.chunk.js"
+    "static/js/2.a51a1d65.chunk.js",
+    "static/css/main.d04e593b.chunk.css",
+    "static/js/main.62e683b7.chunk.js"
   ]
 }

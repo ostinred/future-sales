@@ -16,8 +16,6 @@ const productsExample = [
     viewsCount: 3,
     status: 'active'
   },
-
-
 ]
 
 export const ProductContext = createContext(productsExample);
@@ -43,10 +41,15 @@ export const ProductProvider = ({ children }) => {
     return [...products]
   }
 
+  const getProduct = (id) => {
+    return _.find(products, (o) => o.id === id);
+  }
+
   const ctx = {
     setProduct,
     getAllProducts,
-    deleteProduct
+    deleteProduct,
+    getProduct,
   }
   return <ProductContext.Provider value={ ctx }>{ children }</ProductContext.Provider>;
 };

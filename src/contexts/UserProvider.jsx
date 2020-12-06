@@ -15,7 +15,7 @@ export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(profileExample);
 
   const getUserInfo = () => {
-    return { user }
+    return { ...user }
   }
 
   const ctx = {

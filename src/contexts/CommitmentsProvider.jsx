@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 import { v4 } from 'uuid';
-import _ from 'lodash'
+import _ from "lodash";
 
 const commitmentsExample = [{
   id: v4(),
@@ -35,8 +35,9 @@ export const CommitmentsProvider = ({ children }) => {
   }
 
   const getCommitmentById = (id) => {
-    const foundCommitments = _.filter(commitments, (o) => o.id === id)
-    return foundCommitments
+    const foundCommitment = _.find(commitments, (o) => o.id === id)
+
+    return { ...foundCommitment };
   }
 
   const removeCommitmentById = (id) => {

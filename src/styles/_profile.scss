@@ -1,12 +1,26 @@
 .profileWrapper {
-  background-color: #ffffff;
-  margin-top: 150px;
+  position: relative;
   height: 100%;
+  padding-top: 85px;
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: calc(100% - 150px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    background-color: #ffffff;
+    z-index: -1;
+  }
+
   .headerSection {
     padding: 15px;
     background-color: transparent;
     display: flex;
-    margin-top: -70px;
     .profilePhoto {
       height: 100px;
       width: 100px;
@@ -52,7 +66,6 @@
 }
 .profileListActions {
   border-top: 1px solid #d1d3d4;
-  height: 100%;
   section {
     display: flex;
     justify-content: space-between;

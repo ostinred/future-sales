@@ -1,16 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { ProductContext } from '../contexts/ProductsProvider';
 import ProductItem from './ProductItem';
+import { useStore } from '../hooks/useStore.jsx';
 
 const ProductList = ({ title, link }) => {
-  const { getAllProducts } = useContext(ProductContext);
-  const products = getAllProducts().sort(function (a, b) {
-    if (a.publishedAt > b.publishedAt) {
-      return 1;
-    }
-    return -1;
-  });
+  const { getAllProducts } = useStore();
+
+  const products = getAllProducts().reverse();
+
+  console.log('products', products);
+
   const getProductLink = (productId) => {
     return `/product/${productId}`;
   };

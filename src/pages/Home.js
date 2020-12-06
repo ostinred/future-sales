@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 import Layout from '../components/Layout';
-import Header from '../components/Header';
+import NavBar from '../components/NavBar';
 
-import { PAGE_VARIANT_BASIC } from '../constants';
+import { PAGE_TRANSITION, PAGE_VARIANT_BASIC } from '../constants';
 
 const Home = () => {
   return (
@@ -12,13 +12,10 @@ const Home = () => {
       initial="initial"
       animate="in"
       exit="out"
+      transition={PAGE_TRANSITION}
       variants={PAGE_VARIANT_BASIC}>
-      <Header />
-
-      <Layout classNamePage="homepage">
-        <div>
-          <h1>Homepage</h1>
-        </div>
+      <Layout classNamePage="with-navbar">
+        <NavBar />
       </Layout>
     </motion.div>
   );

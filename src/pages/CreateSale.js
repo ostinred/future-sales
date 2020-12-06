@@ -9,11 +9,7 @@ import { string, object } from 'yup';
 import Header from '../components/Header';
 import Layout from '../components/Layout';
 
-import {
-  PAGE_VARIANT_BASIC,
-  PAGE_TRANSITION,
-  PAGE_VARIANT_RIGHT,
-} from '../constants';
+import { PAGE_TRANSITION, PAGE_VARIANT_RIGHT } from '../constants';
 
 export const schema = object().shape({
   title: string().required(),

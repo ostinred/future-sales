@@ -1,10 +1,15 @@
 import React from 'react';
-import NavBar from './NavBar';
+import { NavLink } from 'react-router-dom';
+
+import logo from '../images/logo.svg';
+import { HOME_PAGE } from '../router/routes';
 
 const Header = () => {
   return (
     <header className="is-header">
-      <NavBar />
+      <NavLink to={HOME_PAGE}>
+        <img src={logo} alt="" />
+      </NavLink>
     </header>
   );
 };

@@ -2,6 +2,7 @@
 @import 'fonts';
 @import 'variables';
 @import 'nav';
+@import 'layout';
 @import 'createSellingPage';
 
 @media screen and (min-width: 500px) {
@@ -13,7 +14,8 @@
   }
 
   body {
-    flex: 1;
+    width: 100%;
+    height: 100%;
     min-height: 812px;
     max-height: 900px;
     border: 1px solid #ccc;
@@ -24,10 +26,24 @@
   box-sizing: border-box;
 }
 
+html {
+  min-height: 100vh;
+  height: 100%;
+}
+
 body {
   background-color: #faf7f7;
   max-width: 414px;
   margin: 0 auto;
+  height: 100%;
+}
+
+#root {
+  &,
+  & > div {
+    height: 100%;
+    overflow: hidden;
+  }
 }
 
 .inputError {

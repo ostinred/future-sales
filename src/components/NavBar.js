@@ -12,29 +12,39 @@ import {
 } from '../router/routes';
 
 const nav = [
-  {
-    page: 'Homepage',
-    link: HOME_PAGE,
-  },
-  { page: 'Shop', link: SHOP_PAGE },
-  { page: 'Wishlist', link: WISHLIST_PAGE },
+  { page: 'Shop', link: HOME_PAGE, icon: 'icon-shop' },
+  { page: 'Wishlist', link: WISHLIST_PAGE, icon: 'icon-wish' },
   { page: 'Create', link: CREATE_SALE_PAGE },
-  { page: 'Deals', link: DEALS_PAGE },
-  { page: 'Profile', link: PROFILE_PAGE },
+  { page: 'Deals', link: DEALS_PAGE, icon: 'icon-bag' },
+  { page: 'Profile', link: PROFILE_PAGE, icon: 'icon-user' },
 ];
 
 const NavBar = () => {
   return (
     <div className="nav-links">
       <ul>
-        {nav.map(({ page, link }) => {
+        {nav.map(({ page, link, icon }) => {
+          if (page === 'Create') {
+            return (
+              <li key={v4()}>
+                <NavLink
+                  activeClassName="is-active"
+                  className="nav-link nav-link__create"
+                  to={link}>
+                  <span className="icon-plus">+</span>
+                </NavLink>
+              </li>
+            );
+          }
           return (
             <li key={v4()}>
               <NavLink
+                exact
                 activeClassName="is-active"
                 className="nav-link"
                 to={link}>
-                {page}
+                {icon ? <i className={icon} /> : null}
+                <span>{page}</span>
               </NavLink>
             </li>
           );

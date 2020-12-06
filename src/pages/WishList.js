@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import Header from '../components/Header';
 import Layout from '../components/Layout';
+import NavBar from '../components/NavBar';
 
-import { PAGE_VARIANT_BASIC, PAGE_TRANSITION } from '../constants';
+import { PAGE_TRANSITION, PAGE_VARIANT_BASIC } from '../constants';
 
 const WishList = () => {
   return (
@@ -14,9 +14,8 @@ const WishList = () => {
       exit="out"
       transition={PAGE_TRANSITION}
       variants={PAGE_VARIANT_BASIC}>
-      <Header />
-      <Layout classNamePage="wishlist-page">
-        <h1>WishList</h1>
+      <Layout classNamePage="with-navbar">
+        <NavBar />
       </Layout>
     </motion.div>
   );

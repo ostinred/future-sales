@@ -45,7 +45,7 @@ const CreateSale = () => {
       buyingPrice,
       sellingPrice,
       sellingDate,
-      publishedAt: '12 December 2020',
+      publishedAt: Date.now(),
       seller: userInfo.id,
       viewCount: 3,
       status: 'active',
@@ -97,7 +97,7 @@ const CreateSale = () => {
                       </div>)) : null}
 
                     <label className="addPhotoContainer" htmlFor="inputFile">
-                      <img className="icon" src="./add.svg" alt="Upload"/>
+                      <img className="icon" src="./add.png" alt="Upload"/>
                     </label>
                     <input
                       accept="image/png, image/jpg, image/jpeg,"

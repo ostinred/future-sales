@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { v4 } from 'uuid';
+import { useHistory } from "react-router-dom";
 import { motion } from 'framer-motion';
 
 import { useForm } from 'react-hook-form';
@@ -22,16 +22,17 @@ export const schema = object().shape({
 });
 
 const CreateSale = () => {
+  let history = useHistory();
   const { setProduct, getAllProducts } = useContext(ProductContext)
+  const {getUserInfo} = useStore()
   const [img, setImg] = useState("");
-  const { useAuth } = useStore()
+  const userInfo = getUserInfo()
+
   const { register, handleSubmit, errors, setError, clearErrors } = useForm({
     shouldFocusError: true,
     reValidateMode: 'onChange',
     resolver: yupResolver(schema),
   });
-  const {getUserInfo} = useStore()
-  const userInfo = getUserInfo()
   const onSubmit = ({
     title,
     description,
@@ -40,7 +41,7 @@ const CreateSale = () => {
     sellingDate,
   }) => {
     const productInstance = {
-      id: v4(),
+      id: userInfo.id,
       category: 'Other',
       title,
       description,
@@ -53,7 +54,8 @@ const CreateSale = () => {
       status: 'active',
       img
     };
-    setProduct(productInstance)
+    setProduct(productInstance);
+    history.push("/future-sales/deals");
   };
 
   const onFileAttached = (event) => {

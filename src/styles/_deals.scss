@@ -2,10 +2,12 @@
   background-color: #ffffff;
   border-radius: 20px;
   margin-top: 20px;
-  padding: 20px 10px;
+  padding: 10px 0;
 }
 .shortInfo {
   display: flex;
+  justify-content: space-between;
+  padding: 10px;
   > div {
     display: flex;
     flex-direction: column;
@@ -22,18 +24,69 @@
   }
   .subTitle {
     color: #9795a6;
-    margin-right: 5px;
+    margin-right: 15px;
     font-size: 14px;
+    position: relative;
   }
 }
 .description {
+  padding: 15px;
   h3 {
     font-family: Karla;
     font-size: 14px;
     color: #9795a6;
   }
+  article {
+    width: 80%;
+  }
 }
 
-.shortInfoItem{
+.shortInfoItem {
   margin-top: 10px;
+}
+
+.sellingControls {
+  border-top: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  padding-top: 20px;
+  button {
+    border-radius: 15px;
+    text-transform: uppercase;
+    font-size: 20px;
+    border: none;
+    width: 150px;
+    height: 44px;
+    font-family: Bebas Neue;
+    letter-spacing: 1px;
+  }
+  button:first-child {
+    background: #2c5cf6;
+    color: #ffffff;
+  }
+  button:last-child {
+    background: #ffffff;
+    border: 1px solid #2c5cf6;
+  }
+}
+
+.statusIndicatorActive {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color: #91ca5f;
+  position: absolute;
+  right: -10px;
+  bottom: 5px;
+}
+.statusIndicatorInActive {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  right: -10px;
+  bottom: 5px;
 }

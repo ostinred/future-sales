@@ -1,8 +1,7 @@
 import React from "react"
 
-export const ProductItem = ({ product }) => {
+export const ProductItem = ({ product, isSelling }) => {
   const { title, status, sellingDate, sellingPrice, buyingPrice, description, img } = product;
-  console.log(product);
   return (
     <div className='productItem'>
       <div className="shortInfo">
@@ -16,7 +15,7 @@ export const ProductItem = ({ product }) => {
             <span className="subTitle">Selling Date</span><span className="value">{ sellingDate }</span>
           </div>
           <div className="shortInfoItem">
-            <span className="subTitle">Status</span><span className="value">{ status }</span>
+            <span className="subTitle"><span className={status.toLowerCase() === "active" ? "statusIndicatorActive": "statusIndicatorInActive"} /> Status</span><span className="value">{ status }</span>
           </div>
         </div>
       </div>
@@ -26,7 +25,10 @@ export const ProductItem = ({ product }) => {
           { description }
         </article>
       </div>
-
+      {isSelling && <div className="sellingControls">
+        <button>Edit</button>
+        <button>Cancel</button>
+      </div> }
     </div>
   )
 }

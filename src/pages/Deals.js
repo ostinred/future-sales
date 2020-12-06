@@ -21,7 +21,7 @@ const Deals = () => {
 
   const isSellingTab = tab === "selling"
   const isCommitmentsTab = tab === "commitments"
-
+console.log(selling);
   return (
     <motion.div
       initial="initial"
@@ -37,8 +37,8 @@ const Deals = () => {
           <button onClick={ () => setTab("commitments") } className={ isCommitmentsTab ? 'activeTab' : "" }>Commitment</button>
         </div>
         <div className="list">
-          { isSellingTab && <p>There is no selling yet..</p> }
-          { isSellingTab && isSellingTab.length > 0 ? selling.filter((o) => o.id === userInfo.id).map(product => <ProductItem isSelling key={ product.id } product={ product } />) : null }
+          { selling.filter((o) => o.id === userInfo.id).length === 0 && <p>There is no selling yet..</p> }
+          { isSellingTab && selling.filter((o) => o.id === userInfo.id).map(product => <ProductItem isSelling key={ product.id } product={ product } />) }
           { isCommitmentsTab && commitments.map(commitment => {
             const product = getProduct(commitment.id)
             return <ProductItem key={ commitment.id } product={ product } />

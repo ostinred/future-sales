@@ -8,7 +8,7 @@ import {useParams} from 'react-router-dom';
 import Shipment from "./Shipment";
 import Payment from "./Payment";
 import Finish from "./Finish";
-import Header from "./Header";
+import Header from "../../components/checkout/Header";
 import {ProductContext} from "../../contexts/ProductsProvider";
 import {STEP_FINISH, STEP_PAYMENT, STEP_SHIPMENT} from "./constants";
 import {CommitmentsContext} from "../../contexts/CommitmentsProvider";
@@ -83,9 +83,8 @@ const Checkout = () => {
       transition={PAGE_TRANSITION}
       variants={PAGE_VARIANT_BASIC}>
 
-      <Header currentStep={state.currentStep}/>
-
       <Layout classNamePage="checkoutPage">
+        <Header currentStep={state.currentStep}/>
         {renderStep(state.currentStep)}
       </Layout>
     </motion.div>

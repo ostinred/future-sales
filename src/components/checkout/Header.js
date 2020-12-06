@@ -1,7 +1,7 @@
 import React from 'react';
-import BackButton from "../../components/BackButton";
-import CheckoutProgress from "../../components/checkout/CheckoutProgress";
-import {STEP_PAYMENT, STEP_SHIPMENT} from "./constants";
+import BackButton from "../BackButton";
+import CheckoutProgress from "./CheckoutProgress";
+import {STEP_PAYMENT, STEP_SHIPMENT} from "../../pages/Checkout/constants";
 
 const Header = (props) => {
   const renderStepNumber = (currentStep) => {
@@ -20,7 +20,7 @@ const Header = (props) => {
       <BackButton />
       <p className="currentStep">{renderStepNumber(props.currentStep)}</p>
       <h1>Checkout</h1>
-      <CheckoutProgress step={props.currentStep}/>
+      <CheckoutProgress currentStep={props.currentStep}/>
     </section>
   );
 };

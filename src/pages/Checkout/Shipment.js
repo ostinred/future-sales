@@ -39,47 +39,57 @@ const Shipment = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <Input
-        reference={register}
-        label='Recipient Name'
-        name='recipientName'
-        placeholder='e.g. John Doe'/>
+    <section className='pageContent'>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className='pageBody'>
+          <Input
+            reference={register}
+            label='Recipient Name'
+            name='recipientName'
+            placeholder='e.g. John Doe'/>
 
-      <Input
-        reference={register}
-        label='Address'
-        name='address'
-        placeholder='e.g. 3rd Street, 124'/>
+          <Input
+            reference={register}
+            label='Address'
+            name='address'
+            placeholder='e.g. 3rd Street, 124'/>
 
-      <Input
-        reference={register}
-        label='Zip Code'
-        name='zipCode'
-        placeholder='11111'/>
+          <Input
+            reference={register}
+            label='Zip Code'
+            name='zipCode'
+            placeholder='11111'/>
 
-      <Input
-        reference={register}
-        label='Country'
-        name='country'
-        placeholder='e.g. USA'/>
+          <Input
+            reference={register}
+            label='Country'
+            name='country'
+            placeholder='e.g. USA'/>
 
-      <Input
-        reference={register}
-        label='City'
-        name='city'
-        placeholder='e.g. New York'/>
+          <Input
+            reference={register}
+            label='City'
+            name='city'
+            placeholder='e.g. New York'/>
+        </div>
 
-
-      <div className='formFooter'>
-        <Product product={props.product} />
-        <hr/>
-        <p className='paymentAmount'>{calculateCommitmentPrice(props.product.sellingPrice)}</p>
-        <button className="submitBtn" type="submit">
-            Continue
-        </button>
-      </div>
-    </form>
+        <div className='formFooter'>
+          <Product product={props.product} />
+          <hr/>
+          <p className='paymentAmount'>
+            <span className='label'>Prepayment</span>
+            <span className='value'>
+              {calculateCommitmentPrice(props.product.sellingPrice)}
+            </span>
+          </p>
+          <div className="actionWrapper">
+            <button className="submitBtn" type="submit">
+                Continue
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
   );
 };
 

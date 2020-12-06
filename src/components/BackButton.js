@@ -1,8 +1,14 @@
 import React from 'react';
+import {useHistory} from "react-router-dom";
 
 const BackButton = () => {
+  const history = useHistory();
+  const onBackClick = () => history.goBack();
+
   return (
-    <button className='backButton'>&#8592;</button>
+    <div className='backButton' onClick={onBackClick}>
+      <i className="icon-arrow-left" />
+    </div>
   );
 };
 

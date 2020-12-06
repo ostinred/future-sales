@@ -1,5 +1,6 @@
-import React, { createContext, useState } from 'react';
+import _ from 'lodash';
 import { v4 } from 'uuid';
+import React, { createContext, useState } from 'react';
 
 const commitmentsExample = [
   {
@@ -34,8 +35,8 @@ export const CommitmentsProvider = ({ children }) => {
   const [commitments, setCommitments] = useState(commitmentsExample);
 
   const getAllCommitments = () => {
-    return [...commitments]
-  }
+    return [...commitments];
+  };
 
   const getCommitmentById = (id) => {
     const foundCommitment = _.find(commitments, (o) => o.id === id);

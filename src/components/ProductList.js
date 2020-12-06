@@ -6,10 +6,7 @@ import ProductItem from './ProductItem';
 
 const ProductList = ({ title, link }) => {
   const { getAllProducts } = useContext(ProductContext);
-
   const products = getAllProducts();
-
-  console.log('products', products);
 
   return (
     <div className="product-list">

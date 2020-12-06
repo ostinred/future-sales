@@ -1,6 +1,5 @@
 export const HOME_PAGE = '/';
 export const SERVICE_PAGE = '/service';
-export const CREATE_SELLING = '/create-selling';
 export const CREATE_SALE_PAGE = '/create-sale';
 export const CHECKOUT_PAGE = '/checkout';
 export const DEALS_PAGE = '/deals';

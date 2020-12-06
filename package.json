@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "http://ostinred.github.io/future-sales",
   "dependencies": {
+    "@hookform/resolvers": "^1.1.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -17,7 +18,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "uuid": "^8.3.1",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "yup": "^0.32.1"
   },
   "scripts": {
     "start": "react-scripts start",

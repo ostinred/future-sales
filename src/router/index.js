@@ -3,8 +3,6 @@ import { AnimatePresence } from 'framer-motion';
 
 import Home from '../pages/Home';
 
-import CreateSelling from '../pages/CreateSelling.jsx';
-
 import CreateSale from '../pages/CreateSale.js';
 import Checkout from '../pages/Checkout';
 import Deals from '../pages/Deals';
@@ -12,7 +10,6 @@ import Profile from '../pages/Profile';
 import Product from '../pages/Product';
 
 import {
-  CREATE_SELLING,
   CREATE_SALE_PAGE,
   HOME_PAGE,
   CHECKOUT_PAGE,
@@ -37,7 +34,6 @@ const Routes = () => {
                 <Route exact path={DEALS_PAGE} component={Deals} />
                 <Route exact path={PRODUCT_PAGE} component={Product} />
                 <Route exact path={PROFILE_PAGE} component={Profile} />
-                <Route exact path={CREATE_SELLING} component={CreateSelling} />
                 <Redirect to={HOME_PAGE} />
               </Switch>
             </AnimatePresence>

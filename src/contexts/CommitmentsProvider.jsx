@@ -53,6 +53,13 @@ export const CommitmentsProvider = ({ children }) => {
     return deletedCommitment;
   };
 
+  const deleteCommitmentsByProductId = (productId) => {
+    const deletedCommitment = _.filter(commitments, (o) => o.product === productId);
+    const filteredCommitments = _.filter(commitments, (o) => o.product !== productId);
+    setCommitments(filteredCommitments);
+    return deletedCommitment;
+  };
+
   const setCommitment = (commitment) => {
     setCommitments((prev) => {
       return [...prev, commitment];
@@ -64,6 +71,7 @@ export const CommitmentsProvider = ({ children }) => {
     getCommitmentById,
     removeCommitmentById,
     setCommitment,
+    deleteCommitmentsByProductId,
   };
   return (
     <CommitmentsContext.Provider value={ctx}>

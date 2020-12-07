@@ -13,7 +13,7 @@ import Header from '../components/Header';
 import Layout from '../components/Layout';
 
 import { PAGE_TRANSITION, PAGE_VARIANT_RIGHT } from '../constants';
-import {v4} from "uuid";
+import { v4 } from 'uuid';
 
 export const schema = object().shape({
   title: string().required(),
@@ -80,135 +80,144 @@ const CreateSale = () => {
       exit="out"
       transition={PAGE_TRANSITION}
       variants={PAGE_VARIANT_RIGHT}>
-      <Header back={true} title="Create Selling" />
       <Layout>
-        <section className="createSellingPage">
-          <form className="formCreateSelling" onSubmit={handleSubmit(onSubmit)}>
-            <div className="whiteBgc">
-              <div className="section">
-                <div className="photo">
-                  <h2>Add Photo</h2>
-                  <div className="photosContainer">
-                    {imgs.length !== 0
-                      ? imgs.map((imgItem, i) => (
-                          <div key={imgItem} className="photoItem">
-                            <span
-                              onClick={() => {
-                                removeImg(i);
-                              }}
-                              className="deleteImg">
-                              <img src="./cancel.svg" alt="Cancel" />
-                            </span>
-                            <img
-                              className="image"
-                              src={imgItem}
-                              alt="Product"
-                            />
-                          </div>
-                        ))
-                      : null}
+        <Header back={true} title="Create Selling" />
+        <main>
+          <section className="createSellingPage">
+            <form
+              className="formCreateSelling"
+              onSubmit={handleSubmit(onSubmit)}>
+              <div className="whiteBgc">
+                <div className="section">
+                  <div className="photo">
+                    <h2>Add Photo</h2>
+                    <div className="photosContainer">
+                      {imgs.length !== 0
+                        ? imgs.map((imgItem, i) => (
+                            <div key={imgItem} className="photoItem">
+                              <span
+                                onClick={() => {
+                                  removeImg(i);
+                                }}
+                                className="deleteImg">
+                                <img src="./cancel.svg" alt="Cancel" />
+                              </span>
+                              <img
+                                className="image"
+                                src={imgItem}
+                                alt="Product"
+                              />
+                            </div>
+                          ))
+                        : null}
 
-                    <label className="addPhotoContainer" htmlFor="inputFile">
-                      <img className="icon" src="./add.svg" alt="Upload" />
-                    </label>
-                    <input
-                      accept="image/png, image/jpg, image/jpeg,"
-                      type="file"
-                      name="image"
-                      ref={register}
-                      onChange={onFileAttached}
-                      id="inputFile"
-                    />
+                      <label className="addPhotoContainer" htmlFor="inputFile">
+                        <img className="icon" src="./add.svg" alt="Upload" />
+                      </label>
+                      <input
+                        accept="image/png, image/jpg, image/jpeg,"
+                        type="file"
+                        name="image"
+                        ref={register}
+                        onChange={onFileAttached}
+                        id="inputFile"
+                      />
+                    </div>
+                    {errors.image && (
+                      <span className="inputError">
+                        {errors.image?.message}
+                      </span>
+                    )}
                   </div>
-                  {errors.image && (
-                    <span className="inputError">{errors.image?.message}</span>
+                </div>
+                <div className="section">
+                  <h2>Product</h2>
+                  <input
+                    ref={register}
+                    name="title"
+                    className="input"
+                    type="text"
+                    placeholder="e.g. Iphone"
+                  />
+                  {errors.title && (
+                    <span className="inputError">{errors.title?.message}</span>
+                  )}
+                </div>
+                <div className="section">
+                  <h2>Description</h2>
+                  <textarea
+                    ref={register}
+                    name="description"
+                    className="textarea"
+                    type="text"
+                    placeholder="Type smothing about future deal..."
+                  />
+                  {errors.description && (
+                    <span className="inputError">
+                      {errors.description?.message}
+                    </span>
+                  )}
+                </div>
+                <div className="section">
+                  <h2>Buying price</h2>
+                  <input
+                    ref={register}
+                    name="buyingPrice"
+                    className="input"
+                    type="number"
+                    min="0"
+                    placeholder="$"
+                  />
+                  {errors.buyingPrice && (
+                    <span className="inputError">
+                      {errors.buyingPrice?.message}
+                    </span>
+                  )}
+                </div>
+                <div className="section">
+                  <h2>Selling price</h2>
+                  <input
+                    ref={register}
+                    name="sellingPrice"
+                    className="input"
+                    type="number"
+                    min="0"
+                    placeholder="$"
+                  />
+                  {errors.sellingPrice && (
+                    <span className="inputError">
+                      {errors.sellingPrice?.message}
+                    </span>
+                  )}
+                </div>
+                <div className="section">
+                  <h2>Selling date</h2>
+                  <input
+                    ref={register}
+                    name="sellingDate"
+                    className="input"
+                    type="number"
+                    min="0"
+                    placeholder="After 3 month"
+                  />
+                  {errors.sellingDate && (
+                    <span className="inputError">
+                      {errors.sellingDate?.message}
+                    </span>
                   )}
                 </div>
               </div>
-              <div className="section">
-                <h2>Product</h2>
-                <input
-                  ref={register}
-                  name="title"
-                  className="input"
-                  type="text"
-                  placeholder="e.g. Iphone"
-                />
-                {errors.title && (
-                  <span className="inputError">{errors.title?.message}</span>
-                )}
-              </div>
-              <div className="section">
-                <h2>Description</h2>
-                <textarea
-                  ref={register}
-                  name="description"
-                  className="textarea"
-                  type="text"
-                  placeholder="Type smothing about future deal..."
-                />
-                {errors.description && (
-                  <span className="inputError">
-                    {errors.description?.message}
-                  </span>
-                )}
-              </div>
-              <div className="section">
-                <h2>Buying price</h2>
-                <input
-                  ref={register}
-                  name="buyingPrice"
-                  className="input"
-                  type="number"
-                  min="0"
-                  placeholder="$"
-                />
-                {errors.buyingPrice && (
-                  <span className="inputError">
-                    {errors.buyingPrice?.message}
-                  </span>
-                )}
-              </div>
-              <div className="section">
-                <h2>Selling price</h2>
-                <input
-                  ref={register}
-                  name="sellingPrice"
-                  className="input"
-                  type="number"
-                  min="0"
-                  placeholder="$"
-                />
-                {errors.sellingPrice && (
-                  <span className="inputError">
-                    {errors.sellingPrice?.message}
-                  </span>
-                )}
-              </div>
-              <div className="section">
-                <h2>Selling date</h2>
-                <input
-                  ref={register}
-                  name="sellingDate"
-                  className="input"
-                  type="number"
-                  min="0"
-                  placeholder="After 3 month"
-                />
-                {errors.sellingDate && (
-                  <span className="inputError">
-                    {errors.sellingDate?.message}
-                  </span>
-                )}
-              </div>
-            </div>
-            <div className="btnSubmitContainer">
-              <button className="submitBtn" type="submit">
-                Post Now
-              </button>
-            </div>
-          </form>
-        </section>
+            </form>
+          </section>
+        </main>
+        <div className="btnSubmitContainer">
+          <button
+            className="submitBtn"
+            type="button"
+            onClick={handleSubmit(onSubmit)}>
+            Post Now
+          </button>
+        </div>
       </Layout>
     </motion.div>
   );

@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import { motion } from 'framer-motion';
 
 import Layout from '../components/Layout';
@@ -18,6 +18,9 @@ import {HOME_PAGE} from "../router/routes";
 import ProductList from "../components/ProductList";
 
 const Product = () => {
+  const toastTimer = {
+    id: null
+  };
   const {productId} = useParams();
   const {getProduct} = useContext(ProductContext);
   const {getUserInfo} = useContext(UserContext);
@@ -26,6 +29,7 @@ const Product = () => {
     showExpandDetailsButton: product.description.length > 70,
     expandedDetails: false,
     expandedSeller: false,
+    showToast: false,
   });
   const commitNowUrl = `/checkout/${product.id}`;
   const seller = getUserInfo();
@@ -40,7 +44,33 @@ const Product = () => {
       expandedSeller: !state.expandedSeller,
     }});
   };
-  console.log('state', state);
+  const showToastAddedToWishList = () => {
+    if (state.showToast) {
+      return;
+    }
+
+    setState({
+      ...state,
+      ...{
+        showToast: true,
+      }
+    });
+
+    toastTimer.id = setTimeout(() => {
+      setState({
+        ...state,
+        ...{
+          showToast: false,
+        }
+      });
+    }, 2500);
+  };
+
+  useEffect(() => {
+    return () => {
+      clearTimeout(toastTimer.id);
+    };
+  }, []);
 
   return (
     <motion.div
@@ -51,7 +81,7 @@ const Product = () => {
       variants={PAGE_VARIANT_BASIC}>
       <Layout>
         <section className="productPage">
-          <Header product={product} />
+          <Header product={product}  onAddToWishList={() => showToastAddedToWishList()} />
 
           <section className="productBody">
             <div className='productMain'>
@@ -116,6 +146,8 @@ const Product = () => {
             <p className="payNowOnly">Pay now only <span className='actualPrice'>&#36;{calculateCommitmentPrice(product.sellingPrice)}</span> from &#36;{product.buyingPrice}</p>
             <Link className='submitBtn' to={commitNowUrl}>Commit now</Link>
           </section>
+
+          <div className={state.showToast ? 'toast active': 'toast'}>Added to wish list</div>
         </section>
       </Layout>
     </motion.div>

@@ -49,6 +49,7 @@ const Checkout = () => {
       shippingAddress: state.shipment,
       paymentMethod: state.payment,
       status: 'in progress',
+      createdAt: Date.now(),
     });
   }
 

@@ -1,31 +1,33 @@
 import _ from 'lodash';
-import { v4 } from 'uuid';
 import React, { createContext, useState } from 'react';
 
 const commitmentsExample = [
   {
     id: 'dd1e8ce5-ba88-4863-b7a1-de2ccbd1f74f',
-    product: 'Product',
+    product: '55f53340-ada3-4d45-b44f-4d3316553546',
     createdBy: 'Profile',
     shippingAddress: 'New York',
     paymentMethod: 'Visa',
     status: 'in progress',
+    createdAt: 1607272498000,
   },
   {
     id: "7f46d763-80df-4ad3-b44b-3cc86daa892b",
-    product: 'Product',
+    product: 'dd1e8ce5-ba88-4863-b7a1-de2ccbd1f74f',
     createdBy: 'Profile',
     shippingAddress: 'New York',
     paymentMethod: 'Visa',
     status: 'in progress',
+    createdAt: 1607252498000,
   },
   {
     id: "9d514096-b83f-4b31-8196-205c059451cb",
-    product: 'Product',
+    product: 'a4a074e7-faf7-4a33-9646-c0ddb11caa2a',
     createdBy: 'Profile',
     shippingAddress: 'New York',
     paymentMethod: 'Visa',
     status: 'in progress',
+    createdAt: 1607232498000,
   },
 ];
 

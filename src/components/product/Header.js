@@ -8,7 +8,7 @@ import viewsCountImage from '../../images/viewsCount.png';
 import {COMMITMENT_PERCENTS} from "../../settings";
 
 
-const Header = ({product}) => {
+const Header = ({product, onAddToWishList}) => {
   const productImages = _.map(product.images, (img, i) => ({
     id: i,
     img: img,
@@ -30,7 +30,7 @@ const Header = ({product}) => {
       <button className="shareButton" type="button">
         <img src={shareImage} alt="Share"/>
       </button>
-      <button className="addToWishListButton" type="button">
+      <button className="addToWishListButton" type="button" onClick={() => onAddToWishList()}>
         <img src={addToWishListImage} alt="Add to wish list"/>
       </button>
 

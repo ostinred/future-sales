@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import _ from 'lodash';
 
 import { useStore } from '../hooks/useStore.jsx';
 
@@ -28,7 +29,7 @@ const Deals = () => {
   const onSearchPageClick = () => history.push(SEARCH_PAGE);
   const onNotificationPageClick = () => history.push(NOTIFICATION_PAGE);
 
-  const commitments = getAllCommitments();
+  const commitments = _.reverse(_.sortBy(getAllCommitments(), ['createdAt']));
   const selling = getAllProducts();
   const userInfo = getUserInfo();
 
@@ -79,7 +80,8 @@ const Deals = () => {
 
             {isCommitmentsTab && commitments ? (
               commitments.map((commitment) => {
-                const product = getProduct(commitment.id);
+                console.log(commitment, '-----')
+                const product = getProduct(commitment.product);
                 return <ProductItem key={commitment.id} product={product} />;
               })
             ) : (

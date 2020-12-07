@@ -11,6 +11,10 @@
     background: linear-gradient(180deg, #C476A8 0%, #657AEA 107.85%);
     box-sizing: border-box;
 
+    .backButton i:before {
+      color: #fff;
+    }
+
     .currentStep {
       font-family: 'Karla', sans-serif;
       line-height: 21px;
@@ -53,7 +57,7 @@
     .productInfo {
       display: flex;
       flex-direction: row;
-      padding: 16px 24px;
+      padding: 16px 24px 6px 16px;
       margin: 0;
 
       .imageContainer {

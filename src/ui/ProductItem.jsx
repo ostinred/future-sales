@@ -2,13 +2,16 @@ import React, { useContext } from "react"
 
 import { ProductContext } from '../contexts/ProductsProvider.jsx'
 import {getSellingDate} from "../utils/getSellingDate";
+import {CommitmentsContext} from "../contexts/CommitmentsProvider";
 
 export const ProductItem = ({ product, isSelling }) => {
   const { title, status, sellingPrice, buyingPrice, description, images, id } = product;
-  const { deleteProduct } = useContext(ProductContext)
+  const { deleteProduct } = useContext(ProductContext);
+  const { deleteCommitmentsByProductId } = useContext(CommitmentsContext);
 
   const deleteSelling = (id) => {
     deleteProduct(id);
+    deleteCommitmentsByProductId(id);
   };
 
   return (

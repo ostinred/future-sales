@@ -28,9 +28,13 @@ const CreateSale = () => {
   const { setProduct } = useContext(ProductContext);
   const { getUserInfo } = useStore();
   const [imgs, setImg] = useState([]);
+  const [productTitlePlaceholder, setProductTitlePlaceholder] = useState("e.g. Iphone");
   const userInfo = getUserInfo();
+  const resetProductTitlePlaceholder = () => {
+    setProductTitlePlaceholder('e.g. Iphone');
+  };
 
-  const { register, handleSubmit, errors } = useForm({
+  const { register, handleSubmit, errors, setValue } = useForm({
     shouldFocusError: true,
     reValidateMode: 'onChange',
     resolver: yupResolver(schema),
@@ -56,6 +60,54 @@ const CreateSale = () => {
     history.push('/future-sales/deals');
   };
 
+  const recognizeImage = (imgContent) => {
+      if (!imgContent) {
+        return
+      }
+
+      const imageParts = imgContent.split(',');
+
+      if (imageParts.length !== 2) {
+        return
+      }
+      setProductTitlePlaceholder('Extracting from image...');
+      const req = fetch('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyC-QIBDTMXex2NvtYVcr_9YSJcEvB2yKRM', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          "requests": [
+            {
+              "features": [
+                {
+                  "type": "WEB_DETECTION"
+                }
+              ],
+              "image": {
+                "content": imageParts[1]
+              }
+            }
+          ]
+        })
+      });
+
+      req.then((response) => {
+        return response.json();
+      }).then((content) => {
+        if(content && content.responses && content.responses.length > 0 && content.responses[0].webDetection) {
+          const webDetection = content.responses[0].webDetection;
+
+          if (webDetection.bestGuessLabels && webDetection.bestGuessLabels.length > 0) {
+            const productTitle = webDetection.bestGuessLabels[0].label;
+            setValue('title', productTitle);
+          }
+        }
+      }).finally(() => {
+        resetProductTitlePlaceholder();
+      });
+  }
+
   const onFileAttached = (event) => {
     if (event.target.files?.length) {
       const { files } = event.target;
@@ -63,6 +115,7 @@ const CreateSale = () => {
       reader.onload = () => {
         if (reader.result) {
           setImg((prev) => [...prev, `${reader.result}`]);
+          recognizeImage(`${reader.result}`);
         }
       };
       reader.readAsDataURL(files[0]);
@@ -137,7 +190,7 @@ const CreateSale = () => {
                     name="title"
                     className="input"
                     type="text"
-                    placeholder="e.g. Iphone"
+                    placeholder={productTitlePlaceholder}
                   />
                   {errors.title && (
                     <span className="inputError">{errors.title?.message}</span>

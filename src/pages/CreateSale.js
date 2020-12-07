@@ -160,6 +160,7 @@ const CreateSale = () => {
                   name="buyingPrice"
                   className="input"
                   type="number"
+                  min="0"
                   placeholder="$"
                 />
                 {errors.buyingPrice && (
@@ -175,6 +176,7 @@ const CreateSale = () => {
                   name="sellingPrice"
                   className="input"
                   type="number"
+                  min="0"
                   placeholder="$"
                 />
                 {errors.sellingPrice && (
@@ -189,7 +191,8 @@ const CreateSale = () => {
                   ref={register}
                   name="sellingDate"
                   className="input"
-                  type="text"
+                  type="number"
+                  min="0"
                   placeholder="After 3 month"
                 />
                 {errors.sellingDate && (

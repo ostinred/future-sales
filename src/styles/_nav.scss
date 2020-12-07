@@ -42,4 +42,17 @@
   &.nav-link__create {
     transform: translateY(-25px);
   }
+
+  .counter {
+    position: absolute;
+    top: 6px;
+    right: -6px;
+    border-radius: 50%;
+    color: #fff;
+    background: #EC546F;
+    line-height: 12px;
+    padding: 2px 4px;
+    padding-top: 2px !important;
+    font-size: 12px !important;
+  }
 }

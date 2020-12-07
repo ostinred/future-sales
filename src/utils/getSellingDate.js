@@ -1,6 +1,6 @@
 export const getSellingDate = (product) => {
   const date = new Date(parseInt(product.publishedAt, 10));
-  const monthes = {
+  const months = {
     0: 'January',
     1: 'February',
     2: 'March',
@@ -14,6 +14,9 @@ export const getSellingDate = (product) => {
     10: 'November',
     11: 'December',
   }
+  const shiftMonths = parseInt(product.sellingDate, 10);
 
-  return `${date.getDate()} ${monthes[date.getMonth()]} ${date.getFullYear()}`
+  date.setMonth(date.getMonth() + shiftMonths)
+
+  return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
 }

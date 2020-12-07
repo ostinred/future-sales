@@ -13,6 +13,7 @@ import Header from '../components/Header';
 import Layout from '../components/Layout';
 
 import { PAGE_TRANSITION, PAGE_VARIANT_RIGHT } from '../constants';
+import {v4} from "uuid";
 
 export const schema = object().shape({
   title: string().required(),
@@ -38,7 +39,7 @@ const CreateSale = () => {
     const { title, description, buyingPrice, sellingPrice, sellingDate } = data;
 
     const productInstance = {
-      id: userInfo.id,
+      id: v4(),
       category: 'Other',
       title,
       description,

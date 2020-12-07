@@ -28,10 +28,12 @@ const Deals = () => {
 
   const onSearchPageClick = () => history.push(SEARCH_PAGE);
   const onNotificationPageClick = () => history.push(NOTIFICATION_PAGE);
+  const userInfo = getUserInfo();
 
   const commitments = _.reverse(_.sortBy(getAllCommitments(), ['createdAt']));
-  const selling = getAllProducts();
-  const userInfo = getUserInfo();
+  const selling = _.reverse(_.sortBy(_.filter(getAllProducts(), (product) => {
+    return product.seller === userInfo.id;
+  }), ['publishedAt']));
 
   const isSellingTab = tab === 'selling';
   const isCommitmentsTab = tab === 'commitments';
@@ -67,25 +69,21 @@ const Deals = () => {
             </button>
           </div>
           <div className="list">
-            {isSellingTab &&
-              (selling ? (
-                selling
-                  .filter((o) => o.id === userInfo.id)
-                  .map((product) => (
-                    <ProductItem isSelling key={product.id} product={product} />
-                  ))
-              ) : (
+            {isSellingTab && selling.length > 0 ? (
+                selling.map((product) => (
+                  <ProductItem isSelling key={product.id} product={product} />
+                ))
+              ) : isSellingTab && (
                 <p>There is no selling yet...</p>
-              ))}
+              )}
 
-            {isCommitmentsTab && commitments ? (
+            {isCommitmentsTab && commitments.length > 0 ? (
               commitments.map((commitment) => {
-                console.log(commitment, '-----')
                 const product = getProduct(commitment.product);
                 return <ProductItem key={commitment.id} product={product} />;
               })
-            ) : (
-              <p>There is no selling yet...</p>
+            ) : isCommitmentsTab && (
+              <p>There is no commitment yet...</p>
             )}
           </div>
         </main>

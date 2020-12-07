@@ -24,7 +24,7 @@ const Notifications = () => {
 
         <main className="notification-wrapper">
           {NOTIFICATIONS.map((x) => (
-            <Notification {...x} />
+            <Notification key={x.id} {...x} />
           ))}
         </main>
       </Layout>

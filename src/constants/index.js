@@ -59,11 +59,13 @@ export const CATEGORIES = [
 
 export const NOTIFICATIONS = [
   {
+    id: 1,
     date: 'Today, 13:00 PM',
     title: 'Jane Doe commited to your product',
     good: 'PS5 Digital Edition gaming console',
   },
   {
+    id: 2,
     date: '5 Dec, 16:00 PM',
     title:
       'Selling date is coming. Don’t forget to prepair your product for shipping.',

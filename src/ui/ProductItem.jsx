@@ -7,9 +7,9 @@ export const ProductItem = ({ product, isSelling }) => {
   const { title, status, sellingPrice, buyingPrice, description, images, id } = product;
   const { deleteProduct } = useContext(ProductContext)
 
-  const deleteSelling = () => {
-    deleteProduct(id)
-  }
+  const deleteSelling = (id) => {
+    deleteProduct(id);
+  };
 
   return (
     <div className='productItem'>
@@ -36,7 +36,7 @@ export const ProductItem = ({ product, isSelling }) => {
       </div>
       {isSelling && <div className="sellingControls">
         <button>Edit</button>
-        <button onClick={ deleteSelling }>Cancel</button>
+        <button onClick={() => deleteSelling(id)}>Cancel</button>
       </div> }
     </div>
   )

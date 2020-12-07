@@ -8,8 +8,6 @@ const ProductList = ({ title, link }) => {
 
   const products = getAllProducts().reverse();
 
-  console.log('products', products);
-
   const getProductLink = (productId) => {
     return `/product/${productId}`;
   };

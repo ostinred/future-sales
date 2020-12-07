@@ -17,6 +17,10 @@ const MostPopular = () => {
   const { getAllProducts } = useContext(ProductContext);
   const products = getAllProducts();
 
+  const getProductLink = (productId) => {
+    return `/product/${productId}`;
+  };
+
   return (
     <motion.div
       initial="initial"
@@ -36,7 +40,7 @@ const MostPopular = () => {
                 oldPrice={buyingPrice}
                 newPrice={sellingPrice}
                 image={images[0]}
-                productLink={HOME_PAGE}
+                productLink={getProductLink(id)}
                 sellingDate={sellingDate}
               />
             )

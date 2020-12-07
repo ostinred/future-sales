@@ -21,7 +21,9 @@ const Search = () => {
   const onHomePage = () => history.push(HOME_PAGE);
 
   const handleSearchList = () => setProductsList([]);
-
+  const getProductLink = (productId) => {
+    return `/product/${productId}`;
+  };
   return (
     <motion.div
       initial="initial"
@@ -64,7 +66,7 @@ const Search = () => {
                       oldPrice={buyingPrice}
                       newPrice={sellingPrice}
                       image={images[0]}
-                      productLink={HOME_PAGE}
+                      productLink={getProductLink(id)}
                       sellingDate={sellingDate}
                     />
                   )

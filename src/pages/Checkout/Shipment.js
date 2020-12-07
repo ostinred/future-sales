@@ -10,7 +10,6 @@ export const schema = object().shape({
   recipientName: string().required(),
   address: string().required(),
   zipCode: string().required(),
-  country: string().required(),
   city: string().required(),
 });
 
@@ -25,15 +24,14 @@ const Shipment = (props) => {
     recipientName,
     address,
     zipCode,
-    country,
     city,
   }) => {
     const shipmentShape = {
       recipientName,
       address,
       zipCode,
-      country,
       city,
+      country: 'USA',
     };
     props.setShipment(shipmentShape);
   };
@@ -59,12 +57,6 @@ const Shipment = (props) => {
             label='Zip Code'
             name='zipCode'
             placeholder='11111'/>
-
-          <Input
-            reference={register}
-            label='Country'
-            name='country'
-            placeholder='e.g. USA'/>
 
           <Input
             reference={register}

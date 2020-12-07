@@ -34,7 +34,7 @@ const CreateSale = () => {
     setProductTitlePlaceholder('e.g. Iphone');
   };
 
-  const { register, handleSubmit, errors, setValue } = useForm({
+  const { register, handleSubmit, errors, setValue, getValues } = useForm({
     shouldFocusError: true,
     reValidateMode: 'onChange',
     resolver: yupResolver(schema),
@@ -61,6 +61,12 @@ const CreateSale = () => {
   };
 
   const recognizeImage = (imgContent) => {
+      const currentValue = getValues('title');
+
+      if (currentValue && currentValue.trim().length > 0) {
+        return
+      }
+
       if (!imgContent) {
         return
       }
@@ -100,7 +106,11 @@ const CreateSale = () => {
 
           if (webDetection.bestGuessLabels && webDetection.bestGuessLabels.length > 0) {
             const productTitle = webDetection.bestGuessLabels[0].label;
-            setValue('title', productTitle);
+            const currentTitle = getValues('title');
+
+            if (currentTitle.trim().length === 0) {
+              setValue('title', productTitle);
+            }
           }
         }
       }).finally(() => {
